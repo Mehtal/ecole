@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content%}
+<div class="container">
+<h1>BLog Drtail</h1>
+
+	
+		<p>{{ post.title }}</p>
+		<p>{{ post.content }}</p>
+	
+		<img src="{{ post.image.url }}">
+
+	
+</div>
+{% endblock %}

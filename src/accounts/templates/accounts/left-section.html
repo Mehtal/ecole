@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="card card-profile mt-0">
+  <img alt="" class="card-img-top" src="{% static 'img/banner.jpg' %}">
+  <div class="card-block p-3 text-center">
+    <a href=""><img alt="" class="card-img-profile" src="{% if user.avatar %} {{ user.avatar.url }} {% endif %}"></a>
+    <h6 class="mt-3">{{ user.first_name }}  {{ user.last_name }}</h6>
+    <a href="{% if user.is_student %}{% url 'accounts:grade' user.students.classroom.name %}{% endif %}"><h6 class="card-subtitle mb-2 badge badge-info">@{% if user.is_student %}{{ user.students.classroom.name}}{% endif %}</h6></a>
+    <p class="afo">I wish i was a little bit taller, wish i was a baller, wish i had a girl…&nbsp;also.</p>
+  </div>
+</div>
+
+<div class="card m-0">
+<h6 class="bg-default p-3 mb-0"> about :  <a data-toggle="collapse" href="#AboutUser" aria-expanded="true" aria-controls="AboutUser" class="align-text-top text-white pull-right"><small>Hide</small></a></h6>
+<div class="card-block p-3 collapse show" id="AboutUser">
+  <ul class="cl list-group">
+    <li class=" mb-2 list-group-item"><span class="mr-1 mb-5"><i class="fas fa-home mr-2"></i>Adresse</span><a class="text-primary" >{{ user.adresse}}</a></li>
+    <li class=" mb-2 list-group-item"><span class="mr-1"><i class="fas fa-venus-mars mr-2"></i>Gender </span><a class="text-primary">{{ user.gender}}</a></li>
+    <li class=" mb-2 list-group-item"><span class="mr-1"><i class="fas fa-birthday-cake mr-2"></i>Birth Day </span><a class="text-primary">{{ user.birth_day}}</a></li>
+    <li class=" mb-2 list-group-item"><span class="mr-1"><i class="fas fa-map-marker-alt mr-2"></i>Birth Location </span><a class="text-primary">{{ user.birth_location}}</a></li>
+  </ul>
+</div>
+ 
+</div>
+<div class="card m-0">
+  <h6 class="bg-default p-3 mb-0"> Teachers :  <a data-toggle="collapse" href="#AboutTeacher" aria-expanded="false" aria-controls="AboutTeacher" class="align-text-top text-white pull-right"><small>SHOW</small></a></h6>
+  <div class="card-block p-3 collapse" id="AboutTeacher">
+    <ul class="cl list-group">
+      {% for obj in user.students.classroom.teacher_set.all %}
+      <li class=" mb-2 list-group-item"><a href="{% url 'accounts:profile' obj.user.username %}"><img class="pull-left img-list p-1 mr-2" src="{{ obj.user.avatar.url }}"></a>
+      <p class="text-primary">{{ obj.user.first_name }} {{ obj.user.last_name }}</p>
+      <p class="badge badge-danger"> {{ obj.module }} </p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="card m-0">
+  <h6 class="bg-default p-3 mb-0"> Class Mates :  <a data-toggle="collapse" href="#AboutStudent" aria-expanded="false" aria-controls="AboutStudent" class="align-text-top text-white pull-right"><small>SHOW</small></a></h6>
+  <div class="card-block p-3 collapse" id="AboutStudent">
+    <ul class="cl list-group">
+      {% for obj in user.students.classroom.student_set.all %}
+      <li class=" mb-2 list-group-item"><a href="{% url 'accounts:profile' obj.user.username %}"><img class="pull-left img-list p-1 mr-2" src="{{ obj.user.avatar.url }}"></a>
+      <p class="text-primary">{{ obj.user.first_name }} {{ obj.user.last_name }}</p>
+      <p class="badge badge-danger"> {{ obj.classroom }} </p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

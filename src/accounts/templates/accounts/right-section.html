@@ -1,0 +1,14 @@
+{% load static %}
+
+<div class="sticky-top"><hr/>
+	{% if events %}
+	{% for obj in events %}
+	<div class="alert alert-danger alert-dismissible" role="alert">
+		<button type="button" data-dismiss="alert" class="close" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+		</button>
+		{{ obj.content }}
+	</div>	
+	{% endfor %}
+	{% endif %}
+</div>

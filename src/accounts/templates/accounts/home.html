@@ -1,0 +1,74 @@
+{% extends 'accounts/base.html' %}
+
+{% block content%}
+<div class="container">
+<h1>BLog Create</h1>
+
+  <form action="{% url 'blog:create' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form> 
+  
+</div>
+<div class="container">	
+	{% if user.is_authenticated %}
+	{% if user.avatar %}
+
+<img style="max-width: 50px; max-height: 50px;" src="{{user.avatar.url }}">
+{% endif %}
+<h1>welcom home {{ user }}</h1>
+<p>First Name : {{ user.first_name }} </p>
+<p>Last Name : {{ user.last_name }} </p>
+<p>Phone Number :</p>	
+
+<p>Birth Day : </p>
+<p>Birth Location : </p>
+<
+<!-- <div class="content">
+    <div class="teachers">  
+        <img src="{{user.students.avatar.url }}" alt="">
+    {% for clsroom in user.students.clsroom_set.all %}
+        
+        <p>{{ clsroom.profile }}{{ clsroom.name }}</p>
+    </div>
+    {% endfor %}
+                    
+                    
+ </div><br/>
+ <div class="alert alert-info">
+    {% for obj in pay %}
+      {{ obj.deposite1 }}
+      {{ obj.paid }}
+    {% endfor%}
+ </div>
+ {% if messages %}
+  <div class="alert alert-warning">
+    {% for message in messages %}
+      	{{ message }}
+    {% endfor %}
+  </div>
+{% endif %}
+ <div class="alert alert-warning" role="alert">
+  
+ 	{% for obj in qs %}
+ 			 {{ obj.user }}
+ 			{{ obj.content }}
+	{% endfor %}
+  {% for obj in ms %}
+    {{ obj.name}}<br />
+    {{ obj.mark}}
+  {% endfor %}
+ </div>	 -->
+
+  {{ user.modules.sort }}
+<a class="btn btn-primary " href="{% url 'accounts:update' request.user.username %}"> update my profile</a><br />
+<a class="btn btn-primary " href="{% url 'logout' %}">Logout</a> 
+<a class="btn btn-primary " href="{% url 'accounts:profile' request.user.username %}">profile</a> 
+{% else %}
+
+<h1> You have to login to see this page</h1>
+<a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>	
+
+{% endif %}
+ </div>
+{% endblock %}

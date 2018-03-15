@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content%}
+
+<div class="container">
+	<h3>marks list</h3>
+	<div>
+		{% for m in marks %}
+			<p> {{ m.id }} </p>
+			<p>{{ m.user }}</p>
+			<p>{{ m.module }}</p>
+			<p>{{ m.teacher }}</p>
+			<p>{{ m.grade }}</p><hr/><hr/><hr/>
+			
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

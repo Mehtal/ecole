@@ -1,0 +1,67 @@
+{% extends 'accounts/base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content%}
+<h1>welcom home {{ noodle }}</h1>
+
+  <form action="{% url 'accounts:update' request.user.username %}" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {% for hidden_field in form.hidden_fields %}
+                     {{ hidden_field }}
+                   {% endfor %}
+
+                   {% if form.non_field_errors %}
+                   {% for error in form.non_field_errors %}
+                     <div class="alert alert-warning" role="alert">
+                         {{ error }}
+                     </div>
+                     {% endfor %}
+                   {% endif %}
+                  
+                      <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ noodle_form.first_name.label_tag }}</span>
+                                                 
+                       {{ noodle_form.first_name.errors }}
+                        {% render_field noodle_form.first_name class="form-control" %}
+                    {{ noodle_form.first_name.help_text }}
+                      </div>
+                      <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ noodle_form.last_name.label_tag }}</span>
+                                                 
+                       {{ noodle_form.first_name.errors }}
+                        {% render_field noodle_form.last_name class="form-control" %}
+                    {{ noodle_form.last_name.help_text }}
+                      </div>
+                      <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ noodle_form.email.label_tag }}</span>
+                                                 
+                       {{ noodle_form.email.errors }}
+                        {% render_field noodle_form.email class="form-control" %}
+                    {{ noodle_form.email.help_text }}
+                      </div>
+                      <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ noodle_form.avatar.label_tag }}</span>
+                                                 
+                       {{ noodle_form.avatar.errors }}
+                        {% render_field noodle_form.avatar class="form-control" %}
+                    {{ noodle_form.avatar.help_text }}
+                      </div>
+                      
+                  
+            <hr/>
+           {{ formset.management_form }}
+                       <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ formset.classroom.label_tag }}</span>
+                                                 
+                       {{ formset.classroom.errors }}
+                        {% render_field formset.classroom class="form-control" %}
+                    {{ formset.classroom.help_text }}
+                      </div>
+          
+          <button type="submit">changes</button>
+    </form>
+
+           
+{% endblock %}
