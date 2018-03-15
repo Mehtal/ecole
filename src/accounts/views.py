@@ -1,18 +1,23 @@
-from django.shortcuts import render,redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.db.models import Q
+from django.shortcuts import render,redirect, get_object_or_404
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView,DetailView,ListView
+from itertools import chain
+from operator import attrgetter
 from .models import User,Teacher,Student,Grade
 from .forms import StudentSignUpForm,TeacherSignUpForm,UserForm,TeacherForm,StudentForm
 from events.models import Event
 from blog.models import Post
 from marks.models import Marks
-from django.contrib.auth.decorators import login_required
-from itertools import chain
-from operator import attrgetter
-from django.db.models import Q
 
 
 
+
+
+
+@method_decorator(login_required, name='dispatch')
 class HomeListView(ListView):
     template_name = 'accounts/home_list.html'
     context_object_name = 'list'
@@ -75,7 +80,7 @@ class TeacherSignUpView(CreateView):
 '''
 USER PROFILE VIEW FOR BOTH STUDENT/TEACHERS 
 '''
-
+@method_decorator(login_required, name='dispatch')
 class ProfileDetailView(DetailView):
     template_name = 'accounts/profile.html'
     queryset = User.objects.all() 
@@ -94,7 +99,7 @@ class ProfileDetailView(DetailView):
 '''
 School Grade/Class List View 
 '''
-
+@method_decorator(login_required, name='dispatch')
 class GradeDetailView(DetailView):
     template_name = 'accounts/grade.html'
     queryset = Grade.objects.all()

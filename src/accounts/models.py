@@ -12,7 +12,7 @@ class User(AbstractUser):
 		)
 	is_student     = models.BooleanField('student status', default=False)
 	is_teacher     = models.BooleanField('teacher status', default=False)
-	avatar         = models.ImageField(null=True ,blank=True)
+	avatar         = models.ImageField(default="default-avatar.png" ,null=True ,blank=True)
 	birth_day      = models.DateField(null=True,blank=True)
 	birth_location = models.CharField(max_length=30, null=True ,blank=True)
 	adresse        = models.CharField(max_length=30, null=True ,blank=True)
