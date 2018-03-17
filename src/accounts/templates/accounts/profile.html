@@ -29,14 +29,14 @@
 
 {% block content%}
 <div class="page-header" filter-color="orange">
-  <div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+  <div class="page-header-image" style="background-image:url({% static 'img/a3.jpg' %})"></div>
 <div class="nav-spacing"></div>
 <div class="container">
     <div class="row">
-        <div class=" {% if request.user == user %} col-md-3 {% else%} col-md-12 {% endif %} ">
+        <div class=" {% if request.user == user %} col-lg-3 col-md-12 {% else%} col-md-12 {% endif %} ">
         {% include 'accounts/left-section.html'%}
       </div>
-      <div class="col-md-8">
+      <div class="col-lg-8 col-md-12">
           {% if request.user == user %}
           <div class="category">
             <div class="category-heading bg-default text-white text-left p-2 mb-5">
@@ -70,14 +70,14 @@
                        <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control" maxlength="30" id="id_last_name">
                       </div>
                       <div class="input-group ">
-                        <span class="input-group-addon bg-default"><label for="id_email">Email:</label></span>
-                       <input type="email" name="email" value="{{ user.email }}" class="form-control" maxlength="254" id="id_email">
+                        <span class="input-group-addon bg-default"><label for="id_adresse">adresse:</label></span>
+                       <input type="text" name="adresse" value="{{ user.adresse }}" class="form-control" maxlength="254" id="id_adresse">
                       </div>
                       <div class="input-group ">
-                        <span class="input-group-addon bg-default"><label for="id_birth_day">birth day:</label></span>
+                        <span class="input-group-addon bg-default"><label for="birth_location">birth:</label></span>
                                                  
-                       <input type="text" name="birth_day" value="{{ user.birth_day }}" size="10" class="form-control date-picker" id="id_birth_day" data-datepicker-color="">
-                       <!-- <input type="text" name="birth_location" value="{{ user.birth_location }}" class="form-control" maxlength="30" id="id_birth_location" placeholder="birth location"> -->
+                       <input type="text" name="birth_day" value="{{ user.birth_day|date:'d m Y' }}" size="10" class="form-control date-picker" id="id_birth_day" data-datepicker-color="">
+                       <input type="text" name="birth_location" value="{{ user.birth_location }}" class="form-control" maxlength="30" id="id_birth_location" placeholder="birth location">
                        
                       </div>
                       <div class="input-group ">
@@ -105,75 +105,7 @@
            {% endif %}
    
       </div>
-      <!--   {% if user.is_teacher %}
-        <div class="user-info col-md-9">
-            <div class="about">
-                <h3>{{ user.first_name }}  {{ user.last_name }}</h3>
-                {% for obj in user.teachers.classroom.all %}
-                <span><a href="{% url 'accounts:grade' obj.name %}"">@{{ obj.name}}</a></span>
-                {% endfor %}
-                <p>Module : {{ user.teachers.module }}</p>
-                <p>Reciption Day : {{ user.teachers.reciption }}</p>
-
-               
-            </div>
-
-            
-            <div class="teachers-info">
-                 {% for obj in user.students.classroom.teacher_set.all %}
-                    <div class="teachers">
-                        <img  src="{{ obj.user.avatar.url }}">
-                        <p>{{ obj.module}}</p> 
-                    </div>
-                {% endfor %}
-                
-            </div>
-            {% endif %}
-            {% if user.is_student %}
-        <div class="user-info col-md-8">
-            <div class="about">
-                <h3>{{ user.first_name }}  {{ user.last_name }}</h3>
-                <span><a href="{% url 'accounts:grade' user.students.classroom.name %}">@{{ user.students.classroom.name}}</a></span>
-                  
-                  {% for obj in user.marks_set.all  %}
-                     <p>{{ obj.module }}</p> 
-                      <p>{{ obj.grade }}</p>
-                      <p>{{ obj.date }}</p>
-                      {{ obj.content }}
-                  {% endfor %}
-                  {% for obj in events %}
-                      {{ obj.content }}
-                   {% endfor %}
-               
-            </div>
-            
-            <div class="teachers-info">
-                  <h3>Teachers :</h3>
-                 {% for obj in user.students.classroom.teacher_set.all %}
-                    <div class="teachers">
-                        <img src="{{ obj.user.avatar.url }}">
-                        <p>{{ obj.module}} <a href="{% url 'accounts:profile' obj.user.username %}">profile</a></p>
-                    </div>
-                {% endfor %}
-                
-            </div>
-            <div class="teachers-info">
-                  <h3>Students :</h3>
-                 {% for obj in user.students.classroom.student_set.all %}
-                    <div class="teachers">
-                        <img src="{{ obj.user.avatar.url }}">
-                        <p>{{ obj.user.first_name }} <a href="{% url 'accounts:profile' obj.user.username %}">profile</a></p>
-                    </div>
-                {% endfor %}
-                
-            </div>
-            {% endif %} -->
-           <!--  
-            {% for obj in queryset %}
-             
-            {{ obj.EventMessage }}
-    {% endfor %} -->
-               
+           
       
     </div>
 

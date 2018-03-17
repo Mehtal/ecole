@@ -3,18 +3,18 @@
 
 {% block content%}
 <div class="page-header" filter-color="orange">
-	<div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+	<div class="page-header-image" style="background-image:url({% static 'img/a5.jpg' %})"></div>
 <div class="nav-spacing"></div>
 
 	<div class="container">
 
 		<h1> Grade : {{ grade.name }}</h1>
 
-		<h6 class="bg-default p-3 mb-0"> Students :  <a data-toggle="collapse" href="#AboutStudent" aria-expanded="false" aria-controls="AboutStudent" class="align-text-top text-white pull-right"><small>SHOW</small></a></h6>
-		<div class="card-block p-3 collapse" id="AboutStudent">
+		<h6 class="bg-default p-3 mb-0"> Students :  <a data-toggle="collapse" href="#AboutStudent" aria-expanded="false" aria-controls="AboutStudent" class="align-text-top text-white pull-right"><small>HIDE</small></a></h6>
+		<div class="card-block p-3 collapse show" id="AboutStudent">
 		<div class="row">
 		{% for obj in grade.student_set.all %}
-		<div class="col-md-3">
+		<div class="col-lg-3 col-md-4">
 		<div class="card card-profile">
               <img alt="" class="card-img-top" src="{% static 'img/banner.jpg' %}">
               <div class="card-block text-center">
@@ -28,12 +28,12 @@
 		{% endfor %}
 	</div></div>	
 		
-		<h6 class="bg-default p-3 mb-0"> Teachers :  <a data-toggle="collapse" href="#AboutTeacher" aria-expanded="false" aria-controls="AboutTeacher" class="align-text-top text-white pull-right"><small>SHOW</small></a></h6>
-		<div class="card-block p-3 collapse" id="AboutTeacher">
+		<h6 class="bg-default p-3 mb-0"> Teachers :  <a data-toggle="collapse" href="#AboutTeacher" aria-expanded="false" aria-controls="AboutTeacher" class="align-text-top text-white pull-right"><small>HIDE</small></a></h6>
+		<div class="card-block p-3 collapse show" id="AboutTeacher">
 		<div class="row">
 		{% for obj in grade.teacher_set.all %}
 
-		<div class="col-md-3">
+		<div class="col-lg-3 col-md-4">
 		<div class="card card-profile">
               <img alt="" class="card-img-top" src="{% static 'img/banner.jpg' %}">
               <div class="card-block text-center">

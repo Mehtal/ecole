@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
-
+from django.conf import settings
 from .models import User,Student,Teacher,Grade
 
 
@@ -34,6 +34,7 @@ class TeacherSignUpForm(UserCreationForm):
 
 
 class UserForm(forms.ModelForm):
+    #birth_day = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email','avatar','adresse','birth_location','birth_day')

@@ -35,11 +35,18 @@
                     {{ noodle_form.last_name.help_text }}
                       </div>
                       <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.email.label_tag }}</span>
+                        <span class="input-group-addon">{{ noodle_form.adresse.label_tag }}</span>
                                                  
-                       {{ noodle_form.email.errors }}
-                        {% render_field noodle_form.email class="form-control" %}
-                    {{ noodle_form.email.help_text }}
+                       {{ noodle_form.adresse.errors }}
+                        {% render_field noodle_form.adresse class="form-control" %}
+                    {{ noodle_form.adresse.help_text }}
+                      </div>
+                       <div class="input-group form-group-no-border input-lg">
+                        <span class="input-group-addon">{{ noodle_form.birth_day.label_tag }}</span>
+                                                 
+                       {{ noodle_form.birth_day.errors }}
+                        {% render_field noodle_form.birth_day class="form-control" %}
+                    {{ noodle_form.birth_day.help_text }}
                       </div>
                       <div class="input-group form-group-no-border input-lg">
                         <span class="input-group-addon">{{ noodle_form.avatar.label_tag }}</span>

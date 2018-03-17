@@ -48,13 +48,13 @@
 </div>
 {% endif %}
 {% if posts.grade %}
-{% if posts.grade < 10 %}
-<div class="grade-box bg-default-light">
+
+<div class="grade-box bg-default-light mt-5">
+	{% if posts.grade < 10 %}
 	<span class="grade-box-icon"><i class="fas fa-thumbs-down text-danger"></i></span>
 	{% else %}
-	<div class="grade-box bg-default-light">
-		<span class="grade-box-icon"><i class="fas fa-thumbs-up text-success"></i></span>
-		{% endif %}
+	<span class="grade-box-icon"><i class="fas fa-thumbs-up text-success"></i></span>
+	{% endif %}
 
 		<div class="grade-box-content">
 			<span class="grade-box-text">{{ posts.teacher }} : {{ posts.module }}</span>
