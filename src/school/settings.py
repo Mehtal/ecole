@@ -25,7 +25,7 @@ SECRET_KEY = 'bxskw5hrbng@571*v*r1x04eog%z@zaz^eun-div!mrw7@5#$#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["pegas.pythonanywhere.com"]
 
 
 # Application definition
