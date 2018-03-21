@@ -20,6 +20,7 @@
     }
 
     .navbar-nav{
+        flex-direction: row;
         &.navbar-logo{
             position: absolute;
             left: 0;
