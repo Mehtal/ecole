@@ -37,7 +37,7 @@
 	                <div class="nav-item dropdown">
 	                       <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                       	{% if user.avatar %}
-	                       	<img style="max-width: 35px; max-height: 35px;" class="rounded-circle" src="{{ user.avatar.url }}">
+	                       	<img style="max-width: 35px; max-height: 35px;" class="rounded-circle" src="{{ request.user.avatar.url }}">
 	                       	{% else %}
 	                       	{% endif %}
 	                         
@@ -98,7 +98,7 @@
 	                <div class="nav-item dropdown">
 	                       <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                       	{% if user.avatar %}
-	                       	<img style="max-width: 35px; max-height: 35px;" class="rounded-circle" src="{{ user.avatar.url }}">
+	                       	<img style="max-width: 35px; max-height: 35px;" class="rounded-circle" src="{{ request.user.avatar.url }}">
 	                       	{% else %}
 	                       	{% endif %}
 	                         
