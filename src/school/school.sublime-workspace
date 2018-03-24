@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"form",
+				"form-control"
+			],
+			[
 				"flex-",
 				"flex-row"
 			],
@@ -95,6 +99,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/lelouch/Desktop/ecole/src/accounts/templates/navbar-loggedin.html",
+			"settings":
+			{
+				"buffer_size": 5905,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -137,48 +150,62 @@
 		"/home/lelouch/Desktop/ecole/src/accounts/__pycache__",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts",
-		"/home/lelouch/Desktop/ecole/src/events",
 		"/home/lelouch/Desktop/ecole/src/school",
 		"/home/lelouch/Desktop/ecole/static",
-		"/home/lelouch/Desktop/ecole/static/static",
-		"/home/lelouch/Desktop/ecole/static/static/sass",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit"
+		"/home/lelouch/Desktop/ecole/static/templates"
 	],
 	"file_history":
 	[
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/profile.html",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_carousel.scss",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_example-pages.scss",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_inputs.scss",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/grade.html",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_variables.scss",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/update.html",
-		"/home/lelouch/Desktop/ecole/src/accounts/views.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/base.html",
 		"/home/lelouch/Desktop/ecole/src/accounts/models.py",
-		"/home/lelouch/Desktop/ecole/src/accounts/forms.py",
-		"/home/lelouch/Desktop/ecole/src/school/settings.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/profile.html",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/update.html",
 		"/home/lelouch/Desktop/ecole/src/events/views.py",
+		"/home/lelouch/Desktop/ecole/src/events/templates/events/event_form.html",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/right-section.html",
+		"/home/lelouch/Desktop/ecole/src/accounts/forms.py",
+		"/home/lelouch/Desktop/ecole/src/events/context_processors.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/urls.py",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/navbar-loggedin.html",
+		"/home/lelouch/Desktop/ecole/src/events/models.py",
+		"/home/lelouch/Desktop/ecole/src/school/urls.py",
+		"/home/lelouch/Desktop/ecole/src/events/urls.py",
+		"/home/lelouch/Desktop/ecole/src/blog/urls.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/views.py",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_dropdown.scss",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_variables.scss",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_inputs.scss",
+		"/home/lelouch/Desktop/ecole/static/static/js/plugins/bootstrap-datepicker.js",
+		"/home/lelouch/Desktop/ecole/src/school/settings.py",
+		"/home/lelouch/Desktop/ecole/src/blog/api/views.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/home_list.html",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/mid-section.html",
+		"/home/lelouch/Desktop/ecole/src/blog/templates/post_detail.html",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/grade.html",
+		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/left-section.html",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/mixins/_datepicker.scss",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/plugins/_plugin-datepicker.scss",
+		"/home/lelouch/Desktop/ecole/src/blog/models.py",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_checkboxes-radio.scss",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_mixins.scss",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_example-pages.scss",
+		"/home/lelouch/Desktop/ecole/src/blog/api/urls.py",
+		"/home/lelouch/Desktop/ecole/src/blog/views.py",
+		"/home/lelouch/Desktop/ecole/src/accounts/api/serializers.py",
+		"/home/lelouch/Desktop/ecole/src/marks/models.py",
+		"/home/lelouch/Desktop/ecole/src/blog/admin.py",
+		"/home/lelouch/Desktop/ecole/src/blog/forms.py",
+		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_carousel.scss",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_responsive.scss",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_navbar.scss",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/home_list.html",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/left-section.html",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/home.html",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_sections.scss",
-		"/home/lelouch/Desktop/ecole/src/blog/views.py",
-		"/home/lelouch/Desktop/ecole/src/blog/urls.py",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_buttons.scss",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/login.html",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/signup.html",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/base.html",
-		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/right-section.html",
-		"/home/lelouch/Desktop/ecole/src/school/urls.py",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_cards.scss",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_misc.scss",
-		"/home/lelouch/Desktop/ecole/src/accounts/urls.py",
 		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_typography.scss",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_dropdown.scss",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/navbar-loggedout.html",
 		"/home/lelouch/Desktop/ecole/src/marks/templates/teacher_dropdown_list_options.html",
 		"/home/lelouch/Desktop/ecole/src/marks/templates/marks_update.html",
@@ -188,16 +215,10 @@
 		"/home/lelouch/Desktop/ecole/src/marks/urls.py",
 		"/home/lelouch/Desktop/ecole/src/blog/templates/post_list.html",
 		"/home/lelouch/Desktop/ecole/src/marks/templates/marks_list.html",
-		"/home/lelouch/Desktop/ecole/src/marks/models.py",
-		"/home/lelouch/Desktop/ecole/static/static/sass/now-ui-kit/_mixins.scss",
 		"/home/lelouch/Desktop/ecole/src/blog/templates/posts_update_form.html",
-		"/home/lelouch/Desktop/ecole/src/blog/models.py",
 		"/home/lelouch/Desktop/ecole/src/grades/models.py",
-		"/home/lelouch/Desktop/ecole/src/blog/api/views.py",
 		"/home/lelouch/Desktop/ecole/src/blog/api/serializers.py",
 		"/home/lelouch/Desktop/ecole/src/blog/templates/post_create.html",
-		"/home/lelouch/Desktop/ecole/src/blog/api/urls.py",
-		"/home/lelouch/Desktop/ecole/src/accounts/api/serializers.py",
 		"/home/lelouch/Desktop/ecole/src/accounts/api/__init__.py",
 		"/home/lelouch/Desktop/ecole/src/blog/api/__init__.py",
 		"/home/lelouch/Desktop/ecole/src/Grades/views.py",
@@ -207,12 +228,6 @@
 		"/home/lelouch/Desktop/ecole/src/grades/admin.py",
 		"/home/lelouch/Desktop/ecole/src/events/migrations/0001_initial.py",
 		"/home/lelouch/Desktop/ecole/src/accounts/admin.py",
-		"/home/lelouch/Desktop/ecole/src/blog/forms.py",
-		"/home/lelouch/Desktop/ecole/src/blog/admin.py",
-		"/home/lelouch/Desktop/ecole/src/blog/templates/post_detail.html",
-		"/home/lelouch/Desktop/ecole/src/events/urls.py",
-		"/home/lelouch/Desktop/ecole/src/events/models.py",
-		"/home/lelouch/Desktop/ecole/src/events/context_processors.py",
 		"/home/lelouch/Desktop/ecole/src/events/admin.py",
 		"/home/lelouch/Desktop/ecole/src/accounts/templates/accounts/profile-page.html",
 		"/home/lelouch/Desktop/ecole/src/profiles/views.py",
@@ -268,16 +283,11 @@
 		"/home/lelouch/Desktop/testit/src/accounts/forms.py",
 		"/home/lelouch/Desktop/testit/src/accounts/templates/registration/signup.html",
 		"/home/lelouch/Desktop/testit/src/accounts/templates/registration/logout.html",
-		"/home/lelouch/Desktop/testit/src/accounts/templates/accounts/login.html",
-		"/home/lelouch/Desktop/Aladin/src/accounts/templates/accounts/home.html",
-		"/home/lelouch/Desktop/Aladin/src/aladin/urls.py",
-		"/home/lelouch/Desktop/Aladin/src/aladin/settings.py",
-		"/home/lelouch/Desktop/Aladin/src/accounts/templates/registration/loggedin.html",
-		"/home/lelouch/Desktop/Aladin/src/accounts/templates/registration/login.html"
+		"/home/lelouch/Desktop/testit/src/accounts/templates/accounts/login.html"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -291,6 +301,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"profile",
+			"rgba(0",
+			"select",
+			"background",
+			"form-group-no-border input-lg",
+			"rgba",
+			"default",
+			"data-datepicker-color",
+			"max-width",
+			"date-picker",
 			"height",
 			"form-control",
 			"username",
@@ -347,14 +367,44 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/lelouch/Desktop/ecole/src/accounts/templates/navbar-loggedin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2192,
+								2192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 513.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -391,7 +441,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 48.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
