@@ -36,8 +36,8 @@ class Teacher(models.Model):
 		('Thursday','Thursday'),
 		)
 	user      = models.OneToOneField(User,on_delete=models.CASCADE, related_name='teachers')
-	classroom = models.ManyToManyField('Grade',)
-	module    = models.ForeignKey('Module',)
+	classroom = models.ManyToManyField('Grade',  blank=True , default="1")
+	module    = models.ForeignKey('Module', null=True , blank=True )
 	reciption = models.CharField(max_length=10,choices=reciption_choice, null=True)
 	
 

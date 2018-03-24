@@ -16,3 +16,4 @@ class Marks(models.Model):
 
 	class Meta:
 		ordering = ["-timestamp" ,]
+		verbose_name_plural = "Marks"

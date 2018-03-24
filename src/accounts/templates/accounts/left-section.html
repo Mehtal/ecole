@@ -5,7 +5,8 @@
   <div class="card-block p-3 text-center">
     <a href=""><img alt="" class="card-img-profile" src="{% if user.avatar %} {{ user.avatar.url }} {% endif %}"></a>
     <h6 class="mt-3">{{ user.first_name }}  {{ user.last_name }}</h6>
-    <a href="{% if user.is_student %}{% url 'accounts:grade' user.students.classroom.name %}{% endif %}"><h6 class="card-subtitle mb-2 badge badge-info">@{% if user.is_student %}{{ user.students.classroom.name}}{% endif %}</h6></a>
+    <a href="{% if user.is_student %}{% url 'accounts:grade' user.students.classroom.name %}{% endif %}">{% if user.is_student %}<h6 class="card-subtitle mb-2 badge badge-info">@{{ user.students.classroom.name}} </h6>{% endif %}
+    {% if user.is_teacher %} {% for obj in user.teachers.classroom.all %}<h6 class="card-subtitle mb-2 badge badge-primary">{{ obj.name }}</h6>{% endfor %}{% endif %}</a>
     <p class="afo">I wish i was a little bit taller, wish i was a baller, wish i had a girl…&nbsp;also.</p>
   </div>
 </div>

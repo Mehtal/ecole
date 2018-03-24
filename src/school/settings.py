@@ -25,7 +25,7 @@ SECRET_KEY = 'bxskw5hrbng@571*v*r1x04eog%z@zaz^eun-div!mrw7@5#$#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["pegas.pythonanywhere.com"]
+ALLOWED_HOSTS = ["pegas.pythonanywhere.com","127.0.0.1"]
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_L10N = False
 
 USE_TZ = True
 
-DATE_INPUT_FORMATS = ['%d %m %Y','%b %d %Y', '%b %d, %Y',]
+DATE_INPUT_FORMATS = ['%m/%d/%Y','%b %d %Y', '%b %d, %Y',]
 
 
 # Static files (CSS, JavaScript, Images)

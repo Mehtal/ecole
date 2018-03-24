@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.conf import settings
 from .models import User,Student,Teacher,Grade
+from django.contrib.admin.widgets import AdminDateWidget
 
 
 class StudentSignUpForm(UserCreationForm):
@@ -34,10 +35,10 @@ class TeacherSignUpForm(UserCreationForm):
 
 
 class UserForm(forms.ModelForm):
-    #birth_day = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    birth_day = forms.DateField(widget=AdminDateWidget())
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email','avatar','adresse','birth_location','birth_day')
+        fields = ('first_name', 'last_name', 'email','avatar','adresse','birth_location','birth_day' ,'gender')
 
 
 

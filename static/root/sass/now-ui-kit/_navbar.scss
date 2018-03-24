@@ -166,10 +166,7 @@
 }
 
 .bg-default{
-    background-color: rgba(0,0,0,0.5) !important;
-}
-.bg-default-light{
-    background-color: rgba(0,0,0,0.3) !important;
+    background-color: $default-color !important;
 }
 
 .bg-primary{

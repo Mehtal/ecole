@@ -268,3 +268,10 @@ textarea.form-control{
 .form-control-no-border {
     border:none;
 }
+
+select {
+    &:focus{
+        
+        background-color:$default-color-opacity;
+    }
+}

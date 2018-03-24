@@ -9,3 +9,5 @@ def EventMessage(request):
 		Event.objects.filter(end__lte=timezone.now().date()).delete()
 
 	return {'events': qs}
+
+

@@ -1,0 +1,55 @@
+{% extends 'accounts/base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content%}
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url({% static 'img/a3.jpg' %})"></div>
+<div class="nav-spacing"></div>
+<div class="container">
+    <div class="row">
+    	<div class="card-login mx-auto">
+		<form action="" method="post">{% csrf_token %}
+	    	{% for hidden_field in form.hidden_fields %}
+                     {{ hidden_field }}
+                   {% endfor %}
+
+                   {% if form.non_field_errors %}
+                   {% for error in form.non_field_errors %}
+                     <div class="alert alert-warning" role="alert">
+                         {{ error }}
+                     </div>
+                     {% endfor %}
+                   {% endif %}
+					 {{ form.user.label_tag }}
+                   <div class="input-group ">
+                       {{ form.user.errors }}
+                        {% render_field form.user class="form-control" %}
+                    {{ form.user.help_text }}
+                      </div>
+                      {{ form.content.label_tag }}
+                      <div class="input-group ">
+                       {{ form.content.errors }}
+                        {% render_field form.content class="form-control" placeholder="you content here .."%}
+                    {{ form.content.help_text }}
+                      </div>
+                      {{ form.start.label_tag }}
+                      <div class="input-group "> 
+                       {{ form.start.errors }}
+                        {% render_field form.start class="form-control date-picker" placeholder=""%}
+                    {{ form.start.help_text }}
+                      </div>
+						{{ form.end.label_tag }}	
+                      <div class="input-group ">
+                       {{ form.end.errors }}
+                        {% render_field form.end class="form-control date-picker" placeholder="event end time"%}
+                    {{ form.end.help_text }}
+                      </div>
+	    <input class="btn btn-primary btn-block btn-simple" type="submit" value="Save" />
+		</form>
+		</div>
+    </div>
+</div>
+</div>
+{% endblock %}

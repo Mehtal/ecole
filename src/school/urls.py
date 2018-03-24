@@ -20,18 +20,20 @@ from django.conf import settings
 from django.conf.urls.static import static
 from accounts  import views as accounts_views
 from blog.views import PostListView
+from django.core.urlresolvers import reverse_lazy
 
 urlpatterns = [
     # url(r'^', include('events.urls', namespace='events')),
     url(r'^admin/', admin.site.urls),
-    url(r'^signup/student$', accounts_views.StudentSignUpView.as_view(), name='student_signup'),
-    url(r'^signup/teacher$', accounts_views.TeacherSignUpView.as_view(), name='teacher_signup'),
+    url(r'^signup/student$', accounts_views.StudentSignUpView.as_view(success_url=reverse_lazy('accounts:profile')), name='student_signup'),
+    url(r'^signup/teacher$', accounts_views.TeacherSignUpView.as_view(success_url=reverse_lazy('accounts:profile')), name='teacher_signup'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'api/blog/', include('blog.api.urls', namespace='api_blog')),
     url(r'blog/', include('blog.urls', namespace='blog')),
     url(r'marks/', include('marks.urls', namespace='marks')),
-    url(r'api/blog/', include('blog.api.urls', namespace='api_blog')),
+    url(r'events/', include('events.urls', namespace='events')),
     url(r'^$',  accounts_views.HomeListView.as_view(), name='home'),
 
 ]

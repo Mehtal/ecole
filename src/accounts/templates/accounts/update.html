@@ -4,7 +4,16 @@
 {% load widget_tweaks %}
 
 {% block content%}
-<h1>welcom home {{ noodle }}</h1>
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url({% static 'img/a3.jpg' %})"></div>
+<div class="nav-spacing"></div>
+<div class="container">
+    <div class="row">
+      <div class=" {% if request.user == user %} col-lg-3 col-md-12 {% else%} col-md-12 {% endif %} ">
+        {% include 'accounts/left-section.html'%}
+      </div>
+<div class="col-lg-8 col-md-12">   
+<div class="card-login mx-auto">
 
   <form action="{% url 'accounts:update' request.user.username %}" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
@@ -20,55 +29,88 @@
                      {% endfor %}
                    {% endif %}
                   
-                      <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.first_name.label_tag }}</span>
-                                                 
+                      <div class="input-group ">
+                                                                        
                        {{ noodle_form.first_name.errors }}
-                        {% render_field noodle_form.first_name class="form-control" %}
+                        {% render_field noodle_form.first_name class="form-control" placeholder="your first name" %}
                     {{ noodle_form.first_name.help_text }}
                       </div>
-                      <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.last_name.label_tag }}</span>
-                                                 
-                       {{ noodle_form.first_name.errors }}
-                        {% render_field noodle_form.last_name class="form-control" %}
+                      <div class="input-group ">
+                        
+                       {{ noodle_form.last_name.errors }}
+                        {% render_field noodle_form.last_name class="form-control" placeholder="your last name"%}
                     {{ noodle_form.last_name.help_text }}
                       </div>
-                      <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.adresse.label_tag }}</span>
+                      <div class="input-group ">
                                                  
                        {{ noodle_form.adresse.errors }}
-                        {% render_field noodle_form.adresse class="form-control" %}
+                        {% render_field noodle_form.adresse class="form-control" placeholder=noodle_form.adresse.lable_tag %}
                     {{ noodle_form.adresse.help_text }}
                       </div>
-                       <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.birth_day.label_tag }}</span>
+                       <div class="input-group ">
                                                  
                        {{ noodle_form.birth_day.errors }}
-                        {% render_field noodle_form.birth_day class="form-control" %}
+                        {% render_field noodle_form.birth_day class="form-control date-picker" placeholder="your birth day" %}
                     {{ noodle_form.birth_day.help_text }}
+                    {{ noodle_form.birth_location.errors }}
+                        {% render_field noodle_form.birth_location class="form-control" placeholder="your birth location" %}
+                    {{ noodle_form.location_day.help_text }}
                       </div>
-                      <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ noodle_form.avatar.label_tag }}</span>
+                      <div class="input-group ">
                                                  
-                       {{ noodle_form.avatar.errors }}
-                        {% render_field noodle_form.avatar class="form-control" %}
-                    {{ noodle_form.avatar.help_text }}
+                       {{ noodle_form.gender.errors }}
+                        {% render_field noodle_form.gender class="form-control" placeholder="your gender"%}
+                    {{ noodle_form.gender.help_text }}
                       </div>
+                      <div class="input-group ">
+                       <input type="file" name="avatar"  id="id_avatar"> 
+                      </div>  
                       
                   
             <hr/>
+            
            {{ formset.management_form }}
-                       <div class="input-group form-group-no-border input-lg">
-                        <span class="input-group-addon">{{ formset.classroom.label_tag }}</span>
+           {% if user.is_student %}
+           <div class="input-group ">
                                                  
                        {{ formset.classroom.errors }}
                         {% render_field formset.classroom class="form-control" %}
                     {{ formset.classroom.help_text }}
                       </div>
-          
-          <button type="submit">changes</button>
+                      {% endif %}
+           {% if user.is_teacher %}
+                       <div class="input-group ">
+                        {{ formset.classroom.label_tag }}
+                                                 
+                       {{ formset.classroom.errors }}
+                        {% render_field formset.classroom class="checkbox mr-3" %}
+                    {{ formset.classroom.help_text }}
+                      </div>
+                      
+
+                        <div class="input-group ">
+                                                                         
+                       {{ formset.module.errors }}
+                        {% render_field formset.module class="form-control" %}
+                    {{ formset.module.help_text }}
+                      </div>
+                      <div class="input-group ">
+                                                                         
+                       {{ formset.reciption.errors }}
+                        {% render_field formset.reciption class="form-control" %}
+                    {{ formset.reciption.help_text }}
+                      </div>
+                      {% endif %}
+            
+
+
+          <button class="btn btn-primary btn-round" type="submit">changes</button>
     </form>
+  
+</div></div></div></div></div>
+  
+
+
 
            
 {% endblock %}

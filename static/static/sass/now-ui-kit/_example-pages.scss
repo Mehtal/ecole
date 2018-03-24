@@ -90,10 +90,7 @@
         }
     margin-bottom:50px;
     .grade-box-icon {
-        display: block;
-        float: left;
-        height: 90px;
-        width: 90px;
+        flex-basis: 25%;
         text-align: center;
         font-size: 45px;
         line-height: 90px;
@@ -106,9 +103,9 @@
 
     }
     .grade-box-content {
-        height:90px;
         padding:5px 10px;
-        margin-left:100px;
+        margin-left:10px;
+        flex-basis:75%;
         span {
             display:block;
         }

@@ -2,7 +2,7 @@ from django.conf.urls import url
 from events import views
 
 
-# urlpatterns = [
-# 	url(r'profile/pegas/', views.EventMessage ,name='alert'),
-# ]
+urlpatterns = [
+	url(r'', views.EventCreate.as_view() ,name='teacher'),
+]
     

@@ -24,7 +24,13 @@
   }
 
   &.datepicker-primary{
-      @include datepicker-colors($primary-color);
+      background-color: $success-color;
+  }
+  &.datepicker-default{
+      @include datepicker-colors($success-color);
+  }
+  &.datepicker-success{
+      @include datepicker-colors($success-color);
   }
 }
 .datepicker-inline {

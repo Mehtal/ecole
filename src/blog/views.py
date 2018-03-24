@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render , redirect , get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import DetailView , ListView , UpdateView,CreateView
+from django.views.generic import DetailView , ListView , UpdateView,CreateView ,RedirectView
 from .models import Post
 from .forms import PostForm
 from accounts.models import  User
@@ -39,6 +39,24 @@ class PostDetailView(DetailView):
 
 	def get_object(self):
 		return get_object_or_404(Post, pk=self.kwargs['pk'])
+
+class PostLikeToggle(RedirectView):
+
+	def get_redirect_url(self, *args ,**kwargs):
+		
+		obj = get_object_or_404(Post, pk=self.kwargs['pk'])
+		url_ = obj.get_absolute_url() 
+		user = self.request.user
+		if user.is_authenticated():
+			if user in obj.like.all():
+				obj.like.remove(user)
+			else:
+				obj.like.add(user)
+
+		return url_
+
+
+	pass
 
 
 class PostListView(ListView):

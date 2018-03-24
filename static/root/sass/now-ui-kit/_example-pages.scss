@@ -413,11 +413,10 @@
 
 .card-profile {
   position: relative;
-  max-height:450px;
   display:flex;
   flex-direction: column;
   margin: 50px auto;
-  background-color: rgba(0,0,0,0.3);
+  background-color: #fff;
   border-radius: 0.25rem;
   border: 1px solid rgba(0,0,0,0.125);
 
@@ -453,14 +452,14 @@
     }
 
 
-
-.img-list {
-     height:75px;
-     width:75px;
-     border-radius:8px;    
- 
-}    
-
+.list_view {
+   .img-list {
+     height:100px;
+     width:100px;
+     border-radius:25%;    
+     
+   }    
+}
 
 .border-thin-transparent {
         border: 1px solid rgba(0, 0, 0, 0.125);
@@ -483,30 +482,4 @@
 .pi {
     max-width: 50px;
     max-height: 50px;
-}
-
-.tr {
-    position:absolute;
-    top:8px;
-    right:30px;
-    color:#1d2124;
-}
-
-.nav-spacing {
-    padding:50px;
-}
-.vh {
-    height: 100vh !important;
-}
-.list-group-item {
-    background-color: inherit;
-}
-
-.fb {
-    flex-basis:100%;
-    justify-content:flex-end;
-}
-
-.sticky-top {
-    top:100px;
 }

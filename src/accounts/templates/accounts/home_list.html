@@ -1,86 +1,46 @@
 {% extends 'accounts/base.html' %}
 {% load static %}
 {% block script %}
-<!-- <script >
-
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-$(document).ready(function(){
-
-	var query = getParameterByName("q")
-	var blogList = [];
-	function parsePosts(){
-		if (blogList == 0 ){
-			$("#blog-container").text("no content currently found")
-
-		}else {
-		$.each(blogList, function(key, value){
-				var blogUser = value.user
-				var blogTitle = value.title;
-				var blogContent = value.content ;
-				var blogImage = value.image;
-				var blogUpdated = value.updated;
-				var blogTimestamp = value.timestamp;
-				$("#blog-container").append(
-					"<h3>" + blogTitle + "</h3>" + "<p>" +  blogContent + "</p>" +"<img src=\"" + blogImage + "\"><hr/>"
-					)
-			})
-		}
-
-	}
-	function fetchPosts(){
-		console.log("fetching...")
-		$.ajax({
-			url : "/api/blog/list/",
-			data : {
-				'q': query
-			},
-			method : "GET",
-			success : function(data){
-				blogList = data 
-				parsePosts()
-				console.log(blogList)
-				
-			},
-			error : function(data){
-				console.log('error')
-				console.log(data)
-			},
-		})
-	}
-	fetchPosts()
-
-	$('#blogForm').submit(function(e){
-		e.preventDefault()
-		this_ = $(this)
-		/*console.log(e)*/
-		/*console.log(this_.serialize())*/
-		var formData = this_.serialize()
-		$.ajax({
-			url : "/api/blog/list/",
-			data : formData,
-			method : "POST",
-			success : function(data){
-				console.log(data)
-				console.log("your form has been submited")
-				fetchPosts()
-				
-			},
-			error : function(data){
-				console.log('error')
-				console.log(data)
-			},
-		})
-		
-	})
-})</script> -->
+<script>
+     $(document).ready(function(){
+          function updateText(btn, newCount){
+          /*btn.text( newCount)*/
+          btn.attr("data-likes", newCount)
+          $(".like-count").text(newCount)
+          
+      }
+      $(".like-btn").click(function(e){
+        e.preventDefault()
+       
+        var this_ = $(this)
+        var likeUrl = this_.attr("data-href")
+        var likeCount = parseInt(this_.attr("data-likes")) | 0
+        var addLike = likeCount + 1
+        var removeLike = likeCount - 1
+        if (likeUrl){
+           $.ajax({
+            url: likeUrl,
+            method: "GET",
+            data: {},
+            success: function(data){
+              console.log(data)
+              var newLikes;
+              if (data.liked){
+                  updateText(this_, addLike,)
+              } else {
+                  updateText(this_, removeLike,)
+                  // remove one like
+              }
+            }, error: function(error){
+              console.log(error)
+              console.log("error")
+            }
+          })
+        }
+       
+      })
+  })
+    </script>
 {% endblock %}
 
 {% block content%}
