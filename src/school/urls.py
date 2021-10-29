@@ -35,6 +35,8 @@ urlpatterns = [
     url(r'marks/', include('marks.urls', namespace='marks')),
     url(r'events/', include('events.urls', namespace='events')),
     url(r'^$',  accounts_views.HomeListView.as_view(), name='home'),
+    #url(r'ckeditor/', include('ckeditor_uploader.urls', )),
+
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

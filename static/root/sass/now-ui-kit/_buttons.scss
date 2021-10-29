@@ -109,6 +109,11 @@
     border-color: $default-color;
     padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
     background-color: $transparent-bg;
+    &:hover,
+    &:focus {
+        color: $danger-color;
+        border-color: $danger-color !important;
+    }
 }
 
 .btn-simple,
@@ -124,6 +129,8 @@
         &:active,
         &.active {
             background-color: $transparent-bg;
+            color: $danger-color;
+            border-color: $danger-color;
         }
     }
 }

@@ -17,7 +17,7 @@ from marks.models import Marks
 
 
 
-@method_decorator(login_required, name='dispatch')
+#@method_decorator(login_required, name='dispatch')
 class HomeListView(ListView):
     template_name = 'accounts/home_list.html'
     context_object_name = 'list'
@@ -25,7 +25,7 @@ class HomeListView(ListView):
 
     def get_queryset(self):
 
-        qs1 = Marks.objects.filter(user=self.request.user)
+        qs1 = "" #Marks.objects.filter(user=self.request.user)
       # qs2 = Event.objects.all()
         qs3 = Post.objects.all()
         queryset = sorted(

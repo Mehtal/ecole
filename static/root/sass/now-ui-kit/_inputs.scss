@@ -1,10 +1,10 @@
-@include form-control-placeholder($primary-color, 0.5);
+@include form-control-placeholder($white-color, 0.5);
 
 .form-control {
-    background-color: $transparent-bg;
+    background-color: transparent;
     border: 1px solid $light-gray;
     border-radius: $btn-round-radius;
-    color: $black-color;
+    color: $white-color;
     line-height: normal;
     font-size: $font-size-large;
     @include transition-input-focus-color();
@@ -15,10 +15,11 @@
     }
 
     &:focus{
-        border: 1px solid $primary-color;
+        border: 1px solid $white-color;
         @include box-shadow(none);
         outline: 0 !important;
-        color: $black-color;
+        color: $white-color;
+        background-color: rgba(0,0,0,0.5);
 
         & + .input-group-addon,
         & ~ .input-group-addon{
@@ -261,4 +262,16 @@ textarea.form-control{
 }
 .form-group.has-error, .form-group.has-danger{
     margin-bottom: 20px;
+}
+
+
+.form-control-no-border {
+    border:none;
+}
+
+select {
+    &:focus{
+        
+        background-color:$default-color-opacity;
+    }
 }

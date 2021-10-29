@@ -1,5 +1,81 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock title %}
+{% block content%}
+<style >
+    .images:hover {
+        background: rgba(0,0,0,0.5);
+    }
+    .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(44,168,255,0.5);
+}
+.overlay:hover {
+    opacity: 1;
+}
+.text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+<div class="page-header" filter-color="orange">
+    <div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+    <div class="nav-spacing"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto bg-default my-3 p-5">
 
-<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update" />
-</form>
+            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                 <div class="custom-file">
+                  <input placeholder="upload" name="images" type="file" multiple class="" id="id_images">
+                </div>
+               <p class="my-3 d-inline"><label for="id_default">Files ?:</label>
+                   <input id="id_default" name="default" type="checkbox" class="">
+               </p>
+
+
+                <input class="d-block" type="submit" value="Update" />
+            </form>
+            </div>
+<div class="col-md-8 mx-auto bg-default my-3 p-5">
+      <strong >attachment</strong>
+      <div class="row mt-5">
+      {% for obj in post.images.all %}
+             {% if obj.default %}
+      <div class="col-4 images m-3 p-0">
+      <a  href="{{ obj.image.url }}"><div class="text-white  w-100 h-100"><i class="fa fa-file fa-4x text" aria-hidden="true"></i>
+            </i></div><div class="overlay">
+        </div></a></div>
+      {% else %}
+
+      <div class="col-4 images m-3 p-0">
+            <a  href="{{ obj.image.url }}"><img style="max_height:100px;width:100%;" src="{{ obj.image.url }}" alt="obj.image" class=""><div class="overlay"><p class="text">{{ext}}</p>
+            <a style="font-size: 30px;position: absolute;top: -10px;right: 5px; "class="text-white"href="{% url 'blog:file-delete' obj.pk %}" type="button" class="close"  aria-label="Close">
+          <span aria-hidden="true">&times;</span></a>
+              </div></a>
+
+            </div>
+                    {% endif %}
+      {% endfor %}
+      </div>
+      </div>
+        </div>
+    </div>
+</div></div>
+      {% endblock content %}

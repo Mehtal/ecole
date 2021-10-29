@@ -1,0 +1,53 @@
+{% load static %}
+{% if user.is_student %}
+<div class="sticky-top"><hr/>
+	{% if events %}
+	{% for obj in events %}
+	<div class="alert alert-danger alert-dismissible" role="alert">
+		<button type="button" data-dismiss="alert" class="close" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+		</button>
+		{{ obj.content }}  {{ obj.end}}
+	</div>
+	{% endfor %}
+	{% endif %}
+</div>
+{% endif %}
+{% if user.is_teacher %}
+<div>
+	<!-- <form action="{% url 'events:teacher' %}" method="post">{% csrf_token %}
+    <div class="input-group ">
+    	<select name="user" required="" id="id_user" class="form-control">
+    	  <option value="" selected="">---------</option>
+
+    	  <option value="1">pegas</option>
+
+    	  <option value="2">teststudent</option>
+
+    	  <option value="3">testteacher</option>
+
+    	</select>
+   	</div>
+   	<div class="input-group ">
+   		<input type="text" name="content" maxlength="120" required="" id="id_content" class="form-control">
+
+   	</div>
+   	<div class="input-group ">
+   		<input type="text" name="start" id="id_start" required="" class="form-control ">
+   		<a href="#" id="calendarlink0"><i class="far fa-calendar-alt fa-2x"></i></a>
+   </div>
+   	<div class="input-group ">
+   		<input type="text" name="end" id="id_end" required="" class="form-control">
+   		<a href="#" id="calendarlink1"><i class="far fa-calendar-alt date-icon"></i></a>
+   	</div>
+
+
+
+    <input type="submit" value="Save" />
+</form> -->
+<hr/>
+<a href="{% url 'events:teacher' %}" class="btn btn-block btn-primary btn-simple">add Event</a>
+<hr/>
+</div>
+
+{% endif %}

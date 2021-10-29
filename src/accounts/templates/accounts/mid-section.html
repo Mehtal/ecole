@@ -1,9 +1,14 @@
 {% load static %}
 
+{% if request.user.is_authenticated %}
+{% block navbar %}
+{% include 'accounts/post_navbar.html'%}
+{% endblock %}
+{% if not request.user.is_student %}
 <div class="form-container">
 	<a class="btn btn-block btn-lg bg-default" data-toggle="collapse" href="#blogForm" aria-expanded="false" aria-controls="blogForm">
 	add a post
-	</a> 
+	</a>
 	<form class="collapse" id="blogForm" action="{% url 'blog:create' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
 		<div class="form-group">
 			<input type="text" name="title" id="id_title" required="" maxlength="120" placeholder=" Enter title here"  class="form-control">
@@ -12,12 +17,12 @@
 			<textarea name="content" rows="10" id="id_content" cols="40" required="" maxlength="2000" placeholder=" Enter title here"  class="form-control"></textarea>
 		</div>
 		<div class="form-group">
-			<input type="file" name="image" id="id_image">
+			<input required type="file" multiple name="images" class="form-control_file">
 		</div>
 		<button type="submit" class="btn btn-danger btn-round">Submit</button>
 	</form>
-
-
+</div>
+{% endif %} {% endif %}
 {% for posts in list %}
 
 {% if posts.title %}
@@ -25,14 +30,17 @@
 	<div class=" d-flex">
 		<img  class="rounded-circle pi mr-2" src="{{posts.user.avatar.url }}">
 		<div>
-			<div class="card-top">					
-				<span class="username text-capitalize"><a href="{% url 'accounts:profile' posts.user.username %}">{{ posts.user.first_name }} {{ posts.user.last_name }}</a></span>
+			<div class="card-top">
+				<span class="username text-capitalize"><a href="{% url 'accounts:profile' posts.user.username %}">{{ posts.user.username}}</a></span>
 				<span class="timestamp"><a href=" {{ posts.get_absolute_url }} ">{% if posts.updated %}{{ posts.updated|timesince }}{% else %}{{ timestamp|timesince }}{% endif %} ago</a></span>
 			</div>
-			<a href="{% url 'blog:detail' posts.id %}"><img class="card-post-image" src="{{ posts.image.url }}" alt="Card image cap"></a>
 			<div class="card-block">
 				<h6 class="card-title text-capitalize">{{ posts.title }}</h6>
-				<p class="card-text text-muted">{{ posts.content|truncatechars:300 }}</p><hr/>
+				<p style="word-break: break-word;" class="card-text text-muted">{{ posts.content|truncatechars:300 }}</p><hr/>
+			</div>
+			<a href="{% url 'blog:detail' posts.id %}"><img class="card-post-image" src="{{ posts.images.first.image.url }}" alt="Card image cap"></a>
+			<div class="card-block">
+
 				<div class="d-flex  flex-row justify-content-between">
 					<div >
 						<a href="" data-href="{{ posts.get_like_api_url }}" data-likes="{{ posts.like.count }}" class="btn btn-primary btn-icon btn-simple btn-icon-mini btn-round mr-2 like-btn" id="likes-{{posts.id}}"><i class="now-ui-icons ui-2_favourite-28"></i></a><span data-likes="{{ posts.like.count }}"  class="mr-3 like-count"> {{ posts.like.count }} </span>
@@ -64,7 +72,7 @@
 				<div class="progress-bar" style="width: calc({{ posts.grade }}*5%)"></div>
 			</div>
 		</div>
-	</div> 
+	</div>
 	{% endif %}
 
 	{% empty %}
@@ -73,6 +81,6 @@
 	{% else %}
 	<p> no posts yet</p>
 	{% endif %}
-	
+
 	{% endfor %}
 </div>

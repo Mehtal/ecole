@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'detail/(?P<pk>\d+)', views.PostDetailView.as_view(), name='detail'),
 
     url(r'update/(?P<pk>\d+)', views.PostUpdateView, name='update'),
+    url(r'file/delete/(?P<pk>\d+)', views.image_delete, name='file-delete'),
     # url(r'', RedirectView.as_view(url="home")),
 
 ]

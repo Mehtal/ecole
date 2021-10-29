@@ -20,6 +20,7 @@
     }
 
     .navbar-nav{
+        flex-direction: row;
         &.navbar-logo{
             position: absolute;
             left: 0;
@@ -166,7 +167,10 @@
 }
 
 .bg-default{
-    background-color: $default-color !important;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.bg-default-light{
+    background-color: rgba(0,0,0,0.3) !important;
 }
 
 .bg-primary{

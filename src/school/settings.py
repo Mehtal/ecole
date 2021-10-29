@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bxskw5hrbng@571*v*r1x04eog%z@zaz^eun-div!mrw7@5#$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["pegas.pythonanywhere.com","127.0.0.1"]
 
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'blog',
     'marks',
     'rest_framework',
+    'ckeditor',
+#    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +85,7 @@ WSGI_APPLICATION = 'school.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'bd.sqlite3'),
     }
 }
 
@@ -130,7 +132,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'root')
- 
+
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(BASE_DIR), 'static', 'static'),
 ]
@@ -142,3 +144,11 @@ LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 
+#CKEDITOR_BASEPATH = '/home/pegas/ecole/static/root/ckeditor/ckeditor'
+#CKEDITOR_UPLOAD_PATH = "uploads/"
+
+#CKEDITOR_CONFIGS = {
+#    'awesome_ckeditor': {
+#        'toolbar': 'Basic',
+#    },
+#}
