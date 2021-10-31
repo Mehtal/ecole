@@ -1,14 +1,14 @@
 //Utilities
-@import "mixins/transparency";
+@use "mixins/transparency";
 
 //Components
-@import "mixins/buttons";
-@import "mixins/vendor-prefixes";
-@import "mixins/inputs";
-@import "mixins/dropdown";
-@import "mixins/badges";
-@import "mixins/navbar";
-@import "mixins/popovers";
-@import "mixins/modals";
-@import "mixins/pages";
-@import "mixins/datepicker";
+@use "mixins/buttons";
+@use "mixins/vendor-prefixes";
+@use "mixins/inputs";
+@use "mixins/dropdown";
+@use "mixins/badges";
+@use "mixins/navbar";
+@use "mixins/popovers";
+@use "mixins/modals";
+@use "mixins/pages";
+@use "mixins/datepicker";

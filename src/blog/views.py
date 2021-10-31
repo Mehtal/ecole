@@ -134,7 +134,6 @@ def image_delete(request, pk):
     if request.user.is_superuser or request.user == owner:
         img.delete()
         messages.success(request, 'your file  was sucessfully deleted')
-        messages.error(request, "you are not allowed to delet this item")
         return redirect("blog:detail", owner.id)
     else:
         messages.error(request, "you are not allowed to delet this item")

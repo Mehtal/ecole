@@ -1,3 +1,5 @@
+@use "variables";
+
 .pagination{
     .page-item .page-link{
         border: 0;
@@ -9,16 +11,16 @@
         text-align: center;
         height: 30px;
         line-height: 30px;
-        color: $black-color;
+        color: variables.$black-color;
         cursor: pointer;
-        font-size: $font-size-base;
+        font-size: variables.$font-size-base;
         text-transform: uppercase;
         background: transparent;
 
         &:hover,
         &:focus{
-            color: $black-color;
-            background-color: $opacity-gray-3;
+            color: variables.$black-color;
+            background-color: variables.$opacity-gray-3;
             border: none;
         }
     }
@@ -37,22 +39,22 @@
     }
 
     .page-item.active > .page-link{
-        color: $light-gray;
+        color: variables.$light-gray;
         box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
 
         &,
         &:focus,
         &:hover{
-            background-color: $default-color;
-            border-color: $default-color;
-            color: $white-color;
+            background-color: variables.$default-color;
+            border-color: variables.$default-color;
+            color: variables.$white-color;
         }
     }
 
     .page-item.disabled > .page-link{
         opacity: .5;
         background-color: rgba(255,255,255, .2);
-        color: $white-color;
+        color: variables.$white-color;
     }
 
     // Colors
@@ -61,8 +63,8 @@
             &,
             &:focus,
             &:hover{
-                background-color: $brand-info;
-                border-color: $brand-info;
+                background-color: variables.$brand-info;
+                border-color: variables.$brand-info;
             }
         }
     }
@@ -72,8 +74,8 @@
             &,
             &:focus,
             &:hover{
-                background-color: $brand-success;
-                border-color: $brand-success;
+                background-color: variables.$brand-success;
+                border-color: variables.$brand-success;
             }
         }
     }
@@ -83,8 +85,8 @@
             &,
             &:focus,
             &:hover{
-                background-color: $brand-primary;
-                border-color: $brand-primary;
+                background-color: variables.$brand-primary;
+                border-color: variables.$brand-primary;
             }
         }
     }
@@ -94,8 +96,8 @@
             &,
             &:focus,
             &:hover{
-                background-color: $brand-warning;
-                border-color: $brand-warning;
+                background-color: variables.$brand-warning;
+                border-color: variables.$brand-warning;
             }
         }
     }
@@ -105,20 +107,20 @@
             &,
             &:focus,
             &:hover{
-                background-color: $brand-danger;
-                border-color: $brand-danger;
+                background-color: variables.$brand-danger;
+                border-color: variables.$brand-danger;
             }
         }
     }
 
     &.pagination-neutral{
         .page-item > .page-link{
-            color: $white-color;
+            color: variables.$white-color;
 
             &:focus,
             &:hover{
-                background-color: $opacity-2;
-                color: $white-color;
+                background-color: variables.$opacity-2;
+                color: variables.$white-color;
             }
         }
 
@@ -126,9 +128,9 @@
             &,
             &:focus,
             &:hover{
-                background-color: $white-bg;
-                border-color: $white-bg;
-                color: $brand-primary;
+                background-color: variables.$white-bg;
+                border-color: variables.$white-bg;
+                color: variables.$brand-primary;
             }
         }
     }

@@ -1,36 +1,41 @@
+@use "mixins/buttons";
+@use "mixins/transparency";
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .btn,
 .navbar .navbar-nav > a.btn{
-    border-width: $border-thick;
-    font-weight: $font-weight-normal;
-    font-size: $font-size-small;
-    line-height: $line-height;
+    border-width: variables.$border-thick;
+    font-weight: variables.$font-weight-normal;
+    font-size: variables.$font-size-small;
+    line-height: variables.$line-height;
     margin: 5px 1px;
     border: none;
-    border-radius: $border-radius-small;
-    padding: $padding-btn-vertical $padding-btn-horizontal;
+    border-radius: variables.$border-radius-small;
+    padding: variables.$padding-btn-vertical variables.$padding-btn-horizontal;
     cursor: pointer;
 
-    @include btn-styles($default-color, $default-states-color);
+    @include buttons.btn-styles(variables.$default-color, variables.$default-states-color);
 
     &:hover,
     &:focus{
-        @include opacity(1);
+        @include transparency.opacity(1);
         outline: 0 !important;
     }
     &:active,
     &.active,
     .open > &.dropdown-toggle {
-         @include box-shadow(none);
+         @include vendor-prefixes.box-shadow(none);
          outline: 0 !important;
     }
 
     &.btn-icon {
         // see above for color variations
-        height: $btn-icon-size-regular;
-        min-width: $btn-icon-size-regular;
-        width: $btn-icon-size-regular;
+        height: variables.$btn-icon-size-regular;
+        min-width: variables.$btn-icon-size-regular;
+        width: variables.$btn-icon-size-regular;
         padding: 0;
-        font-size: $btn-icon-font-size-regular;
+        font-size: variables.$btn-icon-font-size-regular;
         overflow: hidden;
         position: relative;
         line-height: normal;
@@ -40,24 +45,24 @@
         }
 
         &.btn-sm{
-            height: $btn-icon-size-small;
-            min-width: $btn-icon-size-small;
-            width: $btn-icon-size-small;
+            height: variables.$btn-icon-size-small;
+            min-width: variables.$btn-icon-size-small;
+            width: variables.$btn-icon-size-small;
 
             i.fa,
             i.now-ui-icons{
-                font-size: $btn-icon-font-size-small;
+                font-size: variables.$btn-icon-font-size-small;
             }
         }
 
         &.btn-lg{
-            height: $btn-icon-size-lg;
-            min-width: $btn-icon-size-lg;
-            width: $btn-icon-size-lg;
+            height: variables.$btn-icon-size-lg;
+            min-width: variables.$btn-icon-size-lg;
+            width: variables.$btn-icon-size-lg;
 
             i.now-ui-icons,
             i.fa{
-                font-size: $btn-icon-font-size-lg;
+                font-size: variables.$btn-icon-font-size-lg;
             }
         }
 
@@ -81,38 +86,38 @@
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
-.btn-primary { @include btn-styles($primary-color, $primary-states-color); }
-.btn-success { @include btn-styles($success-color, $success-states-color); }
-.btn-info    { @include btn-styles($info-color, $info-states-color); }
-.btn-warning { @include btn-styles($warning-color, $warning-states-color); }
-.btn-danger  { @include btn-styles($danger-color, $danger-states-color); }
-.btn-neutral { @include btn-styles($white-color, $white-color); }
+.btn-primary { @include buttons.btn-styles(variables.$primary-color, variables.$primary-states-color); }
+.btn-success { @include buttons.btn-styles(variables.$success-color, variables.$success-states-color); }
+.btn-info    { @include buttons.btn-styles(variables.$info-color, variables.$info-states-color); }
+.btn-warning { @include buttons.btn-styles(variables.$warning-color, variables.$warning-states-color); }
+.btn-danger  { @include buttons.btn-styles(variables.$danger-color, variables.$danger-states-color); }
+.btn-neutral { @include buttons.btn-styles(variables.$white-color, variables.$white-color); }
 
 .btn{
      &:disabled,
      &[disabled],
      &.disabled{
-        @include opacity(.5);
+        @include transparency.opacity(.5);
     }
 }
 .btn-round{
-    border-width: $border-thin;
-    border-radius: $btn-round-radius !important;
-    padding: $padding-btn-vertical  $padding-round-horizontal;
+    border-width: variables.$border-thin;
+    border-radius: variables.$btn-round-radius !important;
+    padding: variables.$padding-btn-vertical  variables.$padding-round-horizontal;
 
     &.btn-simple{
-        padding: $padding-btn-vertical - 1  $padding-round-horizontal - 1;
+        padding: variables.$padding-btn-vertical - 1  variables.$padding-round-horizontal - 1;
     }
 }
 .btn-simple{
-    border: $border;
-    border-color: $default-color;
-    padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
-    background-color: $transparent-bg;
+    border: variables.$border;
+    border-color: variables.$default-color;
+    padding: variables.$padding-btn-vertical - 1 variables.$padding-round-horizontal - 1;
+    background-color: variables.$transparent-bg;
     &:hover,
     &:focus {
-        color: $danger-color;
-        border-color: $danger-color !important;
+        color: variables.$danger-color;
+        border-color: variables.$danger-color !important;
     }
 }
 
@@ -128,24 +133,24 @@
         &.focus,
         &:active,
         &.active {
-            background-color: $transparent-bg;
-            color: $danger-color;
-            border-color: $danger-color;
+            background-color: variables.$transparent-bg;
+            color: variables.$danger-color;
+            border-color: variables.$danger-color;
         }
     }
 }
 
 .btn-lg{
-   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+   @include buttons.btn-size(variables.$padding-large-vertical, variables.$padding-large-horizontal, variables.$font-size-large, variables.$border-radius-large);
 }
 .btn-sm{
-    @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-base, $border-radius-small);
+    @include buttons.btn-size(variables.$padding-small-vertical, variables.$padding-small-horizontal, variables.$font-size-base, variables.$border-radius-small);
 }
 
 .btn-link{
-    border: $none;
-    padding: $padding-base-vertical $padding-base-horizontal;
-    background-color: $transparent-bg;
+    border: variables.$none;
+    padding: variables.$padding-base-vertical variables.$padding-base-horizontal;
+    background-color: variables.$transparent-bg;
 }
 
 .btn-wd {

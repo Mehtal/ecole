@@ -1,14 +1,17 @@
+@use "mixins/badges";
+@use "variables";
+
 /*           badges             */
 .badge{
     border-radius: 8px;
     padding: 4px 8px;
     text-transform: uppercase;
-    font-size: $font-size-mini;
+    font-size: variables.$font-size-mini;
     line-height: 12px;
-    background-color: $transparent-bg;
-    border: $border;
+    background-color: variables.$transparent-bg;
+    border: variables.$border;
     margin-bottom: 5px;
-    border-radius: $border-radius-extreme;
+    border-radius: variables.$border-radius-extreme;
 }
 .badge-icon{
     padding: 0.4em 0.55em;
@@ -17,23 +20,23 @@
     }
 }
 .badge-default{
-    @include badge-color($default-color);
+    @include badges.badge-color(variables.$default-color);
 }
 .badge-primary{
-    @include badge-color($primary-color);
+    @include badges.badge-color(variables.$primary-color);
 }
 .badge-info{
-    @include badge-color($info-color);
+    @include badges.badge-color(variables.$info-color);
 }
 .badge-success{
-    @include badge-color($success-color);
+    @include badges.badge-color(variables.$success-color);
 }
 .badge-warning{
-    @include badge-color($warning-color);
+    @include badges.badge-color(variables.$warning-color);
 }
 .badge-danger{
-    @include badge-color($danger-color);
+    @include badges.badge-color(variables.$danger-color);
 }
 .badge-neutral{
-    @include badge-color($white-color);
+    @include badges.badge-color(variables.$white-color);
 }

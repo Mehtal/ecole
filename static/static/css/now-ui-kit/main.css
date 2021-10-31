@@ -1,0 +1,40 @@
+/*     brand Colors              */
+/*      light colors         */
+.circle {
+  border-radius: 50%;
+}
+
+.nav-icon-mid {
+  position: absolute;
+  /*background: rgba(0,0,0,0.6);*/
+  top: -5px;
+  left: calc(50vw - 25px);
+  padding: 25px;
+}
+
+.coffee-button {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: #2CA8FF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.coffee-button:hover {
+  background: transparent;
+  transition: 0.3s;
+  border: 2px solid #FF3636;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  opacity: 1;
+}
+.close-btn:hover {
+  color: #EA2027;
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,10 +1,12 @@
+@use "../variables";
+
 @mixin datepicker-colors($color) {
     background-color: $color;
 
     th,
     .day div,
     table tr td span{
-        color: $white-color;
+        color: variables.$white-color;
     }
 
     &:after{
@@ -16,26 +18,26 @@
     }
 
     .dow{
-        color: $datepicker-color-days;
+        color: variables.$datepicker-color-days;
     }
 
     table tr td.old div,
     table tr td.new div,
     table tr td span.old,
     table tr td span.new{
-       color: $datepicker-color-old-new-days;
+       color: variables.$datepicker-color-old-new-days;
     }
 
     table tr td span:hover,
     table tr td span.focused{
-        background:$opacity-1;
+        background:variables.$opacity-1;
     }
 
     .datepicker-switch:hover,
     .prev:hover,
     .next:hover,
     tfoot tr th:hover {
-      background: $opacity-2;
+      background: variables.$opacity-2;
     }
 
     table tr td.active div,
@@ -43,13 +45,13 @@
     table tr td.active.disabled div,
     table tr td.active.disabled:hover div {
 
-      background-color: $white-color;
+      background-color: variables.$white-color;
       color: $color;
     }
 
     table tr td.day:hover div,
     table tr td.day.focused div {
-      background: $opacity-2;
+      background: variables.$opacity-2;
     }
 
     table tr td.active:hover div,
@@ -92,7 +94,7 @@
     table tr td span.active:hover[disabled],
     table tr td span.active.disabled[disabled],
     table tr td span.active.disabled:hover[disabled]{
-      background-color: $white-color;
+      background-color: variables.$white-color;
     }
 
     table tr td span.active:hover,

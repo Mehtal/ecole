@@ -1,3 +1,8 @@
+@use "../mixins/datepicker";
+@use "../mixins/transparency";
+@use "../mixins/vendor-prefixes";
+@use "../variables";
+
 /*!
  * Datepicker for Bootstrap v1.7.0-dev (https://github.com/uxsolutions/bootstrap-datepicker)
  *
@@ -10,10 +15,10 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
   direction: ltr;
-  @include transform-translate-y(-40px);
+  @include vendor-prefixes.transform-translate-y(-40px);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, opacity 0.3s ease 0s, height 0s linear 0.35s;
 
-  @include opacity(0);
+  @include transparency.opacity(0);
   visibility: hidden;
   display: block;
   width: 254px;
@@ -24,13 +29,13 @@
   }
 
   &.datepicker-primary{
-      background-color: $success-color;
+      background-color: variables.$success-color;
   }
   &.datepicker-default{
-      @include datepicker-colors($success-color);
+      @include datepicker.datepicker-colors(variables.$success-color);
   }
   &.datepicker-success{
-      @include datepicker-colors($success-color);
+      @include datepicker.datepicker-colors(variables.$success-color);
   }
 }
 .datepicker-inline {
@@ -109,7 +114,7 @@
 }
 .datepicker .day div,
 .datepicker th {
-  @include transition($general-transition-time, $transition-ease);
+  @include vendor-prefixes.transition(variables.$general-transition-time, variables.$transition-ease);
   text-align: center;
   width: 30px;
   height: 30px;
@@ -117,15 +122,15 @@
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 50%;
-  font-weight: $font-weight-light;
-  font-size: $font-size-base;
+  font-weight: variables.$font-weight-light;
+  font-size: variables.$font-size-base;
   border: none;
   position: relative;
   cursor: pointer;
 }
 
 .datepicker th{
-    color: $primary-color;
+    color: variables.$primary-color;
 }
 
 .table-condensed > tbody > tr > td,
@@ -150,12 +155,12 @@
 }
 .datepicker table tr td.old,
 .datepicker table tr td.new {
-  color: $default-color;
+  color: variables.$default-color;
 }
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
   background: none;
-  color: $default-color ;
+  color: variables.$default-color ;
   cursor: default;
 }
 .datepicker table tr td.highlighted {
@@ -335,8 +340,8 @@
 .datepicker table tr td.active.disabled div,
 .datepicker table tr td.active.disabled:hover div {
 
-  background-color: $primary-color;
-  color: $white-color;
+  background-color: variables.$primary-color;
+  color: variables.$white-color;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .datepicker table tr td.active:hover div,
@@ -359,7 +364,7 @@
 .datepicker table tr td.active:hover[disabled] div,
 .datepicker table tr td.active.disabled[disabled] div,
 .datepicker table tr td.active.disabled:hover[disabled] div{
-  background-color: $primary-color;
+  background-color: variables.$primary-color;
 }
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
@@ -378,7 +383,7 @@
   line-height: 41px;
   float: left;
   margin: 1%;
-  font-size: $font-size-base;
+  font-size: variables.$font-size-base;
   cursor: pointer;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -392,7 +397,7 @@
 .datepicker table tr td span.disabled,
 .datepicker table tr td span.disabled:hover {
   background: none;
-  color: $default-color;
+  color: variables.$default-color;
   cursor: default;
 }
 .datepicker table tr td span.active,
@@ -400,7 +405,7 @@
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active.disabled:hover {
   color: #fff;
-  background-color: $primary-color;
+  background-color: variables.$primary-color;
 }
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active:hover:hover,
@@ -422,7 +427,7 @@
 .datepicker table tr td span.active:hover[disabled],
 .datepicker table tr td span.active.disabled[disabled],
 .datepicker table tr td span.active.disabled:hover[disabled] {
-   background-color: $primary-color;
+   background-color: variables.$primary-color;
    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .datepicker table tr td span.active:active,
@@ -437,11 +442,11 @@
 }
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {
-  color: $default-color;
+  color: variables.$default-color;
 }
 .datepicker .datepicker-switch {
   width: auto;
-  border-radius: $border-radius-small;
+  border-radius: variables.$border-radius-small;
 }
 .datepicker .datepicker-switch,
 .datepicker .prev,

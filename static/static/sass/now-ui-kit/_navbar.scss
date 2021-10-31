@@ -1,6 +1,8 @@
+@use "variables";
+
 .navbar{
-    padding-top: $navbar-padding-base;
-    padding-bottom: $navbar-padding-base;
+    padding-top: variables.$navbar-padding-base;
+    padding-bottom: variables.$navbar-padding-base;
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -9,7 +11,7 @@
         vertical-align: middle;
 
         &:not(.btn):not(.dropdown-item){
-            color: $white-color;
+            color: variables.$white-color;
         }
     }
 
@@ -31,22 +33,22 @@
         }
 
         .nav-link.btn{
-            padding: $padding-btn-vertical $padding-btn-horizontal;
+            padding: variables.$padding-btn-vertical variables.$padding-btn-horizontal;
 
             &.btn-lg{
-                padding: $padding-large-vertical $padding-large-horizontal;
+                padding: variables.$padding-large-vertical variables.$padding-large-horizontal;
             }
 
             &.btn-sm{
-                padding: $padding-small-vertical $padding-small-horizontal;
+                padding: variables.$padding-small-vertical variables.$padding-small-horizontal;
             }
         }
 
         .nav-link:not(.btn){
             text-transform: uppercase;
-            font-size: $font-size-navbar;
-            padding: $padding-base-vertical $padding-base-horizontal;
-            line-height: $line-height-nav-link;
+            font-size: variables.$font-size-navbar;
+            padding: variables.$padding-base-vertical variables.$padding-base-horizontal;
+            line-height: variables.$line-height-nav-link;
 
             i.fa + p,
             i.now-ui-icons + p{
@@ -76,7 +78,7 @@
 
             &.disabled{
                 opacity: .5;
-                color: $white-color;
+                color: variables.$white-color;
             }
         }
 
@@ -84,9 +86,9 @@
         .nav-item .nav-link:not(.btn):focus,
         .nav-item .nav-link:not(.btn):hover,
         .nav-item .nav-link:not(.btn):active{
-            background-color: $opacity-2;
-            border-radius: $border-radius-small;
-            color:$danger-color;
+            background-color: variables.$opacity-2;
+            border-radius: variables.$border-radius-small;
+            color:variables.$danger-color;
         }
     }
 
@@ -101,10 +103,10 @@
 
     .navbar-brand{
         text-transform: uppercase;
-        font-size: $font-size-navbar;
-        padding-top: $padding-base-vertical;
-        padding-bottom: $padding-base-vertical;
-        line-height: $line-height-nav-link;
+        font-size: variables.$font-size-navbar;
+        padding-top: variables.$padding-base-vertical;
+        padding-bottom: variables.$padding-base-vertical;
+        line-height: variables.$line-height-nav-link;
     }
 
     .navbar-toggler{
@@ -133,9 +135,9 @@
     }
 
     &.navbar-transparent{
-        background-color: $transparent-bg !important;
+        background-color: variables.$transparent-bg !important;
         box-shadow: none;
-        color: $white-color;
+        color: variables.$white-color;
         padding-top: 20px;
     }
 
@@ -145,23 +147,23 @@
 
             &.disabled{
                 opacity: .5;
-                color: $default-color;
+                color: variables.$default-color;
             }
         }
 
         .button-bar{
-            background: $default-color;
+            background: variables.$default-color;
         }
 
         .nav-item.active .nav-link:not(.btn),
         .nav-item .nav-link:not(.btn):focus,
         .nav-item .nav-link:not(.btn):hover,
         .nav-item .nav-link:not(.btn):active{
-            background-color: $opacity-gray-3;
+            background-color: variables.$opacity-gray-3;
         }
 
         .logo-container{
-            border: 1px solid $default-color;
+            border: 1px solid variables.$default-color;
         }
     }
 }
@@ -174,25 +176,25 @@
 }
 
 .bg-primary{
-    background-color: $primary-color !important;
+    background-color: variables.$primary-color !important;
 }
 
 .bg-info{
-    background-color: $info-color !important;
+    background-color: variables.$info-color !important;
 }
 
 .bg-success{
-    background-color: $success-color !important;
+    background-color: variables.$success-color !important;
 }
 
 .bg-danger{
-    background-color: $danger-color !important;
+    background-color: variables.$danger-color !important;
 }
 
 .bg-warning{
-    background-color: $warning-color !important;
+    background-color: variables.$warning-color !important;
 }
 
 .bg-white{
-    background-color: $white-color !important;
+    background-color: variables.$white-color !important;
 }

@@ -1,3 +1,5 @@
+@use "../variables";
+
 // Mixin for generating new styles
 @mixin btn-styles($btn-color, $btn-states-color) {
     background-color: $btn-color;
@@ -14,7 +16,7 @@
     .show > &.dropdown-toggle:focus,
     .show > &.dropdown-toggle:hover {
         background-color: $btn-states-color;
-        color: $white-color;
+        color: variables.$white-color;
         box-shadow: none;
     }
 
@@ -38,56 +40,56 @@
     }
 
     // btn-neutral style
-    @if $btn-color == $white-color{
-        color: $primary-color;
+    @if $btn-color == variables.$white-color{
+        color: variables.$primary-color;
 
         &.btn-danger{
-            color: $danger-color;
+            color: variables.$danger-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $danger-states-color;
+                color: variables.$danger-states-color;
             }
         }
 
         &.btn-info{
-            color: $info-color;
+            color: variables.$info-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $info-states-color;
+                color: variables.$info-states-color;
             }
         }
 
         &.btn-warning{
-            color: $warning-color;
+            color: variables.$warning-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $warning-states-color;
+                color: variables.$warning-states-color;
             }
         }
 
         &.btn-success{
-            color: $success-color;
+            color: variables.$success-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $success-states-color;
+                color: variables.$success-states-color;
             }
         }
 
         &.btn-default{
-            color: $default-color;
+            color: variables.$default-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $default-states-color;
+                color: variables.$default-states-color;
             }
         }
 
@@ -100,14 +102,14 @@
         .show > &.dropdown-toggle,
         .show > &.dropdown-toggle:focus,
         .show > &.dropdown-toggle:hover {
-            background-color: $white-color;
-            color: $primary-states-color;
+            background-color: variables.$white-color;
+            color: variables.$primary-states-color;
             box-shadow: none;
         }
 
         &:hover,
         &:focus{
-            color: $primary-states-color;
+            color: variables.$primary-states-color;
 
             &:not(.nav-link){
                 box-shadow: none;
@@ -116,7 +118,7 @@
         }
 
     } @else {
-        color: $white-color;
+        color: variables.$white-color;
     }
 
     &.btn-simple{
@@ -126,7 +128,7 @@
         &:hover,
         &:focus,
         &:active{
-            background-color: $transparent-bg;
+            background-color: variables.$transparent-bg;
             color: $btn-states-color;
             border-color: $btn-states-color;
             box-shadow: none;
@@ -139,7 +141,7 @@
         &:hover,
         &:focus,
         &:active{
-            background-color: $transparent-bg;
+            background-color: variables.$transparent-bg;
             color: $btn-states-color;
             text-decoration: none;
             box-shadow: none;

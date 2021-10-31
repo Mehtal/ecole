@@ -1,6 +1,8 @@
+@use "variables";
+
 .card{
     border: 1px solide rgba(0,0,0,0.125);
-    border-radius: $border-radius-small;
+    border-radius: variables.$border-radius-small;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -15,23 +17,23 @@
     }
 
     &[data-background-color="orange"]{
-        background-color: $primary-color;
+        background-color: variables.$primary-color;
     }
 
     &[data-background-color="red"]{
-        background-color: $danger-color;
+        background-color: variables.$danger-color;
     }
 
     &[data-background-color="yellow"]{
-        background-color: $warning-color;
+        background-color: variables.$warning-color;
     }
 
     &[data-background-color="blue"]{
-        background-color: $info-color;
+        background-color: variables.$info-color;
     }
 
     &[data-background-color="green"]{
-        background-color: $success-color;
+        background-color: variables.$success-color;
     }
 }
 

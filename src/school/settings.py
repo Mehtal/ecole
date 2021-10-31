@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bxskw5hrbng@571*v*r1x04eog%z@zaz^eun-div!mrw7@5#$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["pegas.pythonanywhere.com","127.0.0.1"]
+ALLOWED_HOSTS = ["pegas.pythonanywhere.com", "127.0.0.1","192.168.43.2","*"]
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'marks',
     'rest_framework',
     'ckeditor',
-#    'ckeditor_uploader'
+    #    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'school.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +122,7 @@ USE_L10N = False
 
 USE_TZ = True
 
-DATE_INPUT_FORMATS = ['%m/%d/%Y','%b %d %Y', '%b %d, %Y',]
+DATE_INPUT_FORMATS = ['%m/%d/%Y', '%b %d %Y', '%b %d, %Y', ]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -144,10 +144,10 @@ LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 
-#CKEDITOR_BASEPATH = '/home/pegas/ecole/static/root/ckeditor/ckeditor'
-#CKEDITOR_UPLOAD_PATH = "uploads/"
+# CKEDITOR_BASEPATH = '/home/pegas/ecole/static/root/ckeditor/ckeditor'
+# CKEDITOR_UPLOAD_PATH = "uploads/"
 
-#CKEDITOR_CONFIGS = {
+# CKEDITOR_CONFIGS = {
 #    'awesome_ckeditor': {
 #        'toolbar': 'Basic',
 #    },

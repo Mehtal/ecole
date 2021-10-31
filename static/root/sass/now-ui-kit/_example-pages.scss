@@ -1,8 +1,11 @@
+@use "mixins/inputs";
+@use "variables";
+
 .login-page{
 
     .card-login{
-        border-radius: $border-radius-large;
-        padding-bottom: $padding-base-horizontal;
+        border-radius: variables.$border-radius-large;
+        padding-bottom: variables.$padding-base-horizontal;
         max-width: 320px;
 
         .btn-wd{
@@ -24,19 +27,19 @@
         }
 
         &.card-plain{
-            @include input-coloured-bg($opacity-5, $white-color, $white-color, $transparent-bg, $opacity-1, $opacity-2);
+            @include inputs.input-coloured-bg(variables.$opacity-5, variables.$white-color, variables.$white-color, variables.$transparent-bg, variables.$opacity-1, variables.$opacity-2);
 
             .input-group-addon,
             .form-group.form-group-no-border .input-group-addon,
             .input-group.form-group-no-border .input-group-addon{
-                color: $opacity-8;
+                color: variables.$opacity-8;
             }
         }
     }
 
     .link{
         font-size: 10px;
-        color: $white-color;
+        color: variables.$white-color;
         text-decoration: none;
     }
 }
@@ -62,7 +65,7 @@
             display: block;
             font-size: 12px;
             a {
-                color:$dark-gray;
+                color:variables.$dark-gray;
             }
 
         }
@@ -76,7 +79,7 @@
     .card-block {
         
         .card-text {
-            color:$light-black;
+            color:variables.$light-black;
             overflow: hidden;
             text-overflow:ellipsis;
             padding:10px;
@@ -86,7 +89,7 @@
 }
 .grade-box {
     .failed {
-            background-color:$danger-color;
+            background-color:variables.$danger-color;
         }
     margin-bottom:50px;
     .grade-box-icon {
@@ -192,7 +195,7 @@
     padding: 0.75rem 0.5rem;
     color: inherit;
     &:hover {
-        color:$primary-color;
+        color:variables.$primary-color;
     }
 }
 

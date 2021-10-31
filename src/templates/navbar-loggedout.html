@@ -1,0 +1,25 @@
+{% load static %}
+ <!-- Navbar -->
+	    <nav class="navbar  bg-default navbar-transparent fixed-top container d-block" color-on-scroll="400">
+	            <div class="navbar-translate d-flex justify-content-between align-items-center">
+	               <a class="navbar-brand" href="{% url 'home' %}">
+	                  <img src="{% static 'img/logo-aladin.png' %}"" width="30" height="30" alt="logo">
+					 <strong>مدرسة علاء الدين الخاصة</strong> 
+	                </a>
+	                <button class="navbar-toggler navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+	                    <i class="fas fa-th"></i>
+	                </button>
+	            </div>
+	            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+	                <ul class="navbar-nav justify-content-end">
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="#"><strong>Create Account</strong> </a>
+	                    </li>
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="{% url 'login' %}"><strong>Login</strong></a>
+	                    </li>
+	                </ul>
+	            </div>
+	        
+	    </nav>
+	    

@@ -1,3 +1,7 @@
+@use "../variables";
+@use "transparency";
+@use "vendor-prefixes";
+
 @mixin navbar-responsive() {
     .navbar{
         .navbar-nav{
@@ -49,7 +53,7 @@
 
         .dropdown-menu .dropdown-item:focus,
         .dropdown-menu .dropdown-item:hover{
-            color: $white-color;
+            color: variables.$white-color;
         }
 
         .navbar-translate{
@@ -60,8 +64,8 @@
             justify-content: space-between!important;
             -ms-flex-align: center;
             align-items: center;
-            @include transform-translate-x(0px);
-            @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+            @include vendor-prefixes.transform-translate-x(0px);
+            @include vendor-prefixes.transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
         }
 
         .navbar-toggler-bar{
@@ -70,7 +74,7 @@
             width: 22px;
             height: 1px;
             border-radius: 1px;
-            background: $white-bg;
+            background: variables.$white-bg;
 
             & + .navbar-toggler-bar{
                 margin-top: 7px;
@@ -83,7 +87,7 @@
         }
 
         &.bg-white:not(.navbar-transparent) .navbar-toggler-bar{
-            background: $default-color;
+            background: variables.$default-color;
         }
 
         & .toggled .navbar-toggler-bar{
@@ -103,31 +107,31 @@
     }
     .bar1 {
       top: 0px;
-      @include bar-animation($topbar-back);
+      @include vendor-prefixes.bar-animation(variables.$topbar-back);
     }
     .bar2 {
       opacity: 1;
     }
     .bar3 {
       bottom: 0px;
-      @include bar-animation($bottombar-back);
+      @include vendor-prefixes.bar-animation(variables.$bottombar-back);
     }
     .toggled .bar1 {
       top: 6px;
-      @include bar-animation($topbar-x);
+      @include vendor-prefixes.bar-animation(variables.$topbar-x);
     }
     .toggled .bar2 {
       opacity: 0;
     }
     .toggled .bar3 {
       bottom: 6px;
-      @include bar-animation($bottombar-x);
+      @include vendor-prefixes.bar-animation(variables.$bottombar-x);
     }
 
-    @include topbar-x-rotation();
-    @include topbar-back-rotation();
-    @include bottombar-x-rotation();
-    @include bottombar-back-rotation();
+    @include vendor-prefixes.topbar-x-rotation();
+    @include vendor-prefixes.topbar-back-rotation();
+    @include vendor-prefixes.bottombar-x-rotation();
+    @include vendor-prefixes.bottombar-back-rotation();
 
     @-webkit-keyframes fadeIn {
       0% {opacity: 0;}
@@ -160,16 +164,16 @@
 
         max-height: none !important;
 
-        @include transform-translate-x(300px);
-        @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+        @include vendor-prefixes.transform-translate-x(300px);
+        @include vendor-prefixes.transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
         &:before{
-            background: $brand-primary; /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient($brand-primary 0%, #000 80%); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient($brand-primary 0%, #000 80%); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient($brand-primary 0%, #000 80%); /* For Firefox 3.6 to 15 */
-            background: linear-gradient($brand-primary 0%, #000 80%); /* Standard syntax (must be last) */
-            @include opacity(.76);
+            background: variables.$brand-primary; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(variables.$brand-primary 0%, #000 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(variables.$brand-primary 0%, #000 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(variables.$brand-primary 0%, #000 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(variables.$brand-primary 0%, #000 80%); /* Standard syntax (must be last) */
+            @include transparency.opacity(.76);
 
             display: block;
             content: "";
@@ -187,13 +191,13 @@
                 margin-top: 0.3125rem;
 
                 &:not(.btn){
-                    color: $white-color;
+                    color: variables.$white-color;
                 }
             }
         }
 
         .dropdown-menu .dropdown-item{
-            color: $white-color;
+            color: variables.$white-color;
         }
     }
 
@@ -205,7 +209,7 @@
     }
 
     .wrapper{
-        @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+        @include vendor-prefixes.transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
     }
 
     #bodyClick{
@@ -220,7 +224,7 @@
         z-index: 9999;
         overflow-x: hidden;
         background-color: transparent;
-        @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+        @include vendor-prefixes.transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
     }
 
 }

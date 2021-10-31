@@ -1,12 +1,14 @@
+@use "variables";
+
 button,
 input,
 optgroup,
 select,
 textarea{
-    font-family: $sans-serif-family;
+    font-family: variables.$sans-serif-family;
 }
 h1,h2,h3,h4,h5,h6{
-    font-weight: $font-weight-normal;
+    font-weight: variables.$font-weight-normal;
 }
 
 small{
@@ -14,37 +16,37 @@ small{
 }
 
 a{
-    color: $primary-color;
+    color: variables.$primary-color;
     &:hover,
     &:focus{
-        color: $danger-color !important;
+        color: variables.$danger-color !important;
     }
 }
 h1, .h1 {
-    font-size: $font-size-h1;
+    font-size: variables.$font-size-h1;
     line-height: 1.15;
-    margin-bottom: $margin-base-vertical * 2;
+    margin-bottom: variables.$margin-base-vertical * 2;
 
     small{
-        font-weight: $font-weight-bold;
+        font-weight: variables.$font-weight-bold;
         text-transform: uppercase;
         opacity: .8;
     }
 }
 h2, .h2{
-    font-size: $font-size-h2;
-    margin-bottom: $margin-base-vertical * 2;
+    font-size: variables.$font-size-h2;
+    margin-bottom: variables.$margin-base-vertical * 2;
 }
 h3, .h3{
-    font-size: $font-size-h3;
-    margin-bottom: $margin-base-vertical * 2;
+    font-size: variables.$font-size-h3;
+    margin-bottom: variables.$margin-base-vertical * 2;
     line-height: 1.4em;
 }
 h4, .h4{
-    font-size: $font-size-h4;
+    font-size: variables.$font-size-h4;
     line-height: 1.45em;
-    margin-top: $margin-base-vertical * 2;
-    margin-bottom: $margin-base-vertical;
+    margin-top: variables.$margin-base-vertical * 2;
+    margin-bottom: variables.$margin-base-vertical;
 
     & + .category,
     &.title + .category{
@@ -52,13 +54,13 @@ h4, .h4{
     }
 }
 h5, .h5 {
-    font-size: $font-size-h5;
+    font-size: variables.$font-size-h5;
     line-height: 1.4em;
     margin-bottom: 15px;
 }
 h6, .h6{
-    font-size: $font-size-h6;
-    font-weight: $font-weight-bold;
+    font-size: variables.$font-size-h6;
+    font-weight: variables.$font-weight-bold;
     text-transform: uppercase;
 }
 p{
@@ -71,13 +73,13 @@ p{
 }
 
 .title{
-    font-weight: $font-weight-bold;
+    font-weight: variables.$font-weight-bold;
 
     &.title-up{
         text-transform: uppercase;
 
         a{
-            color: $black-color;
+            color: variables.$black-color;
             text-decoration: none;
         }
     }
@@ -89,70 +91,70 @@ p{
 .description,
 .card-description,
 .footer-big p{
-    color: $dark-gray;
-    font-weight: $font-weight-light;
+    color: variables.$dark-gray;
+    font-weight: variables.$font-weight-light;
 }
 .category{
     text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    color: $dark-gray;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$dark-gray;
 }
 .text-primary {
-  color: $brand-primary !important;
+  color: variables.$brand-primary !important;
 }
 .text-info {
-  color: $brand-info !important;
+  color: variables.$brand-info !important;
 }
 .text-success {
-  color: $brand-success !important;
+  color: variables.$brand-success !important;
 }
 .text-warning {
-  color: $brand-warning !important;
+  color: variables.$brand-warning !important;
 }
 .text-danger {
-  color: $brand-danger !important;
+  color: variables.$brand-danger !important;
 }
 .text-black{
-  color: $light-black;
+  color: variables.$light-black;
 }
 
 .blockquote{
     border-left: none;
-    border: 1px solid $default-color;
+    border: 1px solid variables.$default-color;
     padding: 20px;
-    font-size: $font-size-blockquote;
+    font-size: variables.$font-size-blockquote;
     line-height: 1.8;
 
     small{
-        color: $default-color;
-        font-size: $font-size-small;
+        color: variables.$default-color;
+        font-size: variables.$font-size-small;
         text-transform: uppercase;
     }
 
     &.blockquote-primary{
-        border-color: $primary-color;
-        color: $primary-color;
+        border-color: variables.$primary-color;
+        color: variables.$primary-color;
 
         small{
-            color: $primary-color;
+            color: variables.$primary-color;
         }
     }
 
     &.blockquote-danger{
-        border-color: $danger-color;
-        color: $danger-color;
+        border-color: variables.$danger-color;
+        color: variables.$danger-color;
 
         small{
-            color: $danger-color;
+            color: variables.$danger-color;
         }
     }
 
     &.blockquote-white{
-        border-color: $opacity-8;
-        color: $white-color;
+        border-color: variables.$opacity-8;
+        color: variables.$white-color;
 
         small{
-            color: $opacity-8;
+            color: variables.$opacity-8;
         }
     }
 }

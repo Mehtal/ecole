@@ -1,39 +1,41 @@
+@use "variables";
+
 .btn-twitter{
-    color: $social-twitter;
+    color: variables.$social-twitter;
 
     &:hover,
     &:focus,
     &:active{
-        color: $social-twitter-state-color;
+        color: variables.$social-twitter-state-color;
     }
 }
 
 .btn-facebook{
-    color: $social-facebook;
+    color: variables.$social-facebook;
 
     &:hover,
     &:focus,
     &:active{
-        color: $social-facebook-state-color;
+        color: variables.$social-facebook-state-color;
     }
 }
 
 .btn-google{
-    color: $social-google;
+    color: variables.$social-google;
 
     &:hover,
     &:focus,
     &:active{
-        color: $social-google-state-color;
+        color: variables.$social-google-state-color;
     }
 }
 
 .btn-linkedin{
-    color: $social-linkedin;
+    color: variables.$social-linkedin;
 
     &:hover,
     &:focus,
     &:active{
-        color: $social-linkedin-state-color;
+        color: variables.$social-linkedin-state-color;
     }
 }

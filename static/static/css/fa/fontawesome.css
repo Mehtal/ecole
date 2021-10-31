@@ -1,0 +1,22 @@
+/* Error: Missing argument $number2.
+ *   ,--> sass/fa/_larger.scss
+ * 7 |   font-size: math.div(4em / 3);
+ *   |              ^^^^^^^^^^^^^^^^^ invocation
+ *   '
+ *   ,--> sass:math
+ * 1 | @function div($number1, $number2) {
+ *   |           ======================= declaration
+ *   '
+ *   sass/fa/_larger.scss 7:14     @import
+ *   sass/fa/fontawesome.scss 8:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Missing argument $number2.\a   \250c \2500 \2500 > sass/fa/_larger.scss\a 7 \2502    font-size: math.div(4em / 3);\a   \2502               ^^^^^^^^^^^^^^^^^ invocation\a   \2575 \a   \250c \2500 \2500 > sass:math\a 1 \2502  @function div($number1, $number2) {\a   \2502            \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  declaration\a   \2575 \a   sass/fa/_larger.scss 7:14     @import\a   sass/fa/fontawesome.scss 8:9  root stylesheet";
+}

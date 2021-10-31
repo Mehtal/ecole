@@ -1,0 +1,62 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block script %}
+<script>
+     $(document).ready(function(){
+          function updateText(btn, newCount){
+          /*btn.text( newCount)*/
+          btn.attr("data-likes", newCount)
+          $(".like-count").text(newCount)
+          
+      }
+      $(".like-btn").click(function(e){
+        e.preventDefault()
+       
+        var this_ = $(this)
+        var likeUrl = this_.attr("data-href")
+        var likeCount = parseInt(this_.attr("data-likes")) | 0
+        var addLike = likeCount + 1
+        var removeLike = likeCount - 1
+        if (likeUrl){
+           $.ajax({
+            url: likeUrl,
+            method: "GET",
+            data: {},
+            success: function(data){
+              console.log(data)
+              var newLikes;
+              if (data.liked){
+                  updateText(this_, addLike,)
+              } else {
+                  updateText(this_, removeLike,)
+                  // remove one like
+              }
+            }, error: function(error){
+              console.log(error)
+              console.log("error")
+            }
+          })
+        }
+       
+      })
+  })
+    </script>
+{% endblock %}
+
+
+{% block content%}
+<div class="page-header" filter-color="orange">
+	<div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+	<div class="nav-spacing py-5"></div>
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-lg-8 mx-auto">
+				{% include 'accounts/mid-section.html'%}
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}
+

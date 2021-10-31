@@ -1,3 +1,5 @@
+@use "../variables";
+
 /* ========================================================================
  * bootstrap-switch - v3.3.2
  * http://www.bootstrap-switch.org
@@ -66,7 +68,7 @@
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   margin-right: 20px;
-  background: rgba($black-color, .2);
+  background: rgba(variables.$black-color, .2);
 }
 
 .bootstrap-switch .bootstrap-switch-container {
@@ -107,27 +109,27 @@
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-brown,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-brown {
   color: #fff;
-  background: $brand-primary;
+  background: variables.$brand-primary;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
   color: #fff;
-  background: $brand-info;
+  background: variables.$brand-info;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-green,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-green {
   color: #fff;
-  background: $brand-success;
+  background: variables.$brand-success;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-orange,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-orange {
-  background: $brand-warning;
+  background: variables.$brand-warning;
   color: #fff;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-red,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-red {
   color: #fff;
-  background: $brand-danger;
+  background: variables.$brand-danger;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
@@ -268,23 +270,23 @@
 }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-red ~ .bootstrap-switch-default{
-    background-color: $brand-danger;
+    background-color: variables.$brand-danger;
 }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-orange ~ .bootstrap-switch-default{
-    background-color: $brand-warning;
+    background-color: variables.$brand-warning;
 }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-green ~ .bootstrap-switch-default{
-    background-color: $brand-success;
+    background-color: variables.$brand-success;
 }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-brown ~ .bootstrap-switch-default{
-    background-color: $brand-primary;
+    background-color: variables.$brand-primary;
 }
 
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-blue ~ .bootstrap-switch-default{
-    background-color: $brand-info;
+    background-color: variables.$brand-info;
 }
 
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-red,
@@ -292,7 +294,7 @@
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-blue,
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-orange,
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-green{
-    background-color: $light-gray;
+    background-color: variables.$light-gray;
 }
 
 .bootstrap-switch-off .bootstrap-switch-handle-on{

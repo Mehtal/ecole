@@ -1,3 +1,5 @@
+@use "../variables";
+
 /*! nouislider - 9.1.0 - 2016-12-10 16:00:32 */
 
 
@@ -69,7 +71,7 @@
 }
 .noUi-horizontal .noUi-handle {
     border-radius: 50%;
-	background-color: $white-color;
+	background-color: variables.$white-color;
 	box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.2);
 	height:15px;
 	width:15px;
@@ -94,7 +96,7 @@
 	border-radius: 3px;
 }
 .noUi-connect {
-	background: $default-color;
+	background: variables.$default-color;
     border-radius: 3px;
 -webkit-transition: background 450ms;
 	transition: background 450ms;
@@ -116,11 +118,11 @@
 	box-shadow: inset 0 0 1px #FFF,
 				inset 0 1px 7px #EBEBEB,
 				0 3px 6px -3px #BBB;
-	-webkit-transition: $general-transition-time $transition-ease;
-    -moz-transition: $general-transition-time $transition-ease;
-    -ms-transition: $general-transition-time $transition-ease;
-    -o-transform: $general-transition-time $transition-ease;
-    transition: $general-transition-time $transition-ease;
+	-webkit-transition: variables.$general-transition-time variables.$transition-ease;
+    -moz-transition: variables.$general-transition-time variables.$transition-ease;
+    -ms-transition: variables.$general-transition-time variables.$transition-ease;
+    -o-transform: variables.$general-transition-time variables.$transition-ease;
+    transition: variables.$general-transition-time variables.$transition-ease;
 }
 .noUi-active {
 	-webkit-transform: scale3d(1.5,1.5,1);
@@ -264,7 +266,7 @@
 	&.slider-neutral{
 		& .noUi-connect,
         &.noUi-connect{
-            background-color: $white-color;
+            background-color: variables.$white-color;
         }
 
 		&.noUi-target{
@@ -272,79 +274,79 @@
 		}
 
 		& .noUi-handle{
-			background-color: $white-color;
+			background-color: variables.$white-color;
 		}
 	}
 
 	&.slider-primary{
 		& .noUi-connect,
         &.noUi-connect{
-            background-color: $primary-color;
+            background-color: variables.$primary-color;
         }
 
 		&.noUi-target{
-			background-color: $primary-color-opacity;
+			background-color: variables.$primary-color-opacity;
 		}
 
 		& .noUi-handle{
-			background-color: $brand-primary;
+			background-color: variables.$brand-primary;
 		}
 	}
 
     &.slider-info{
         & .noUi-connect,
         &.noUi-connect{
-            background-color: $brand-info;
+            background-color: variables.$brand-info;
         }
 
 		&.noUi-target{
-			background-color: $info-color-opacity;
+			background-color: variables.$info-color-opacity;
 		}
 
 		& .noUi-handle{
-			background-color: $brand-info;
+			background-color: variables.$brand-info;
 		}
     }
     &.slider-success{
         & .noUi-connect,
         &.noUi-connect{
-            background-color: $brand-success;
+            background-color: variables.$brand-success;
         }
 
         &.noUi-target{
-			background-color: $success-color-opacity;
+			background-color: variables.$success-color-opacity;
 		}
 
 		& .noUi-handle{
-			background-color: $brand-success;
+			background-color: variables.$brand-success;
 		}
     }
     &.slider-warning{
         & .noUi-connect,
         &.noUi-connect{
-            background-color: $brand-warning;
+            background-color: variables.$brand-warning;
         }
 
         &.noUi-target{
-			background-color: $warning-color-opacity;
+			background-color: variables.$warning-color-opacity;
 		}
 
 		& .noUi-handle{
-			background-color: $brand-warning;
+			background-color: variables.$brand-warning;
 		}
     }
     &.slider-danger{
         & .noUi-connect,
         &.noUi-connect{
-            background-color: $brand-danger;
+            background-color: variables.$brand-danger;
         }
 
         &.noUi-target{
-			background-color: $danger-color-opacity;
+			background-color: variables.$danger-color-opacity;
 		}
 
 		& .noUi-handle{
-			background-color: $brand-danger;
+			background-color: variables.$brand-danger;
 		}
     }
 

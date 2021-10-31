@@ -1,0 +1,45 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block content%}
+<div class="page-header" filter-color="orange">
+	<div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+	<div class="nav-spacing py-5"></div>
+	<div class="container">
+		<div class="row">
+				<div class="card cold-md-8  ">
+				<form  action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+				{{ form.media }}
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <span class="btn btn-danger m-0" type="button">title</span>
+				  </div>
+				  {% render_field form.title class="form-control" %}
+				</div>
+				<div class="for">
+			    
+			    </div>
+			    <p>
+			    <pre class="mx-auto">
+			    {% render_field form.content class="form-control" %}
+			    </pre>
+			    </p>
+			    <div class="form-group m-4">
+			    {% render_field form.draft  %}
+			    <label class="custom-control-label mt-3">draft</label>
+			    </div>
+			    <!-- <input required type="file" multiple name="images" class="form-control_file"> -->
+			    <div class="d-block custom-file">
+			      <input name="images" type="file" multiple class="" id="id_images">
+			    </div>
+			    <input type="submit" value="Save" />
+			</form>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

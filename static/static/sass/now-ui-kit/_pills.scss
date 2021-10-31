@@ -1,3 +1,5 @@
+@use "variables";
+
 .nav-pills{
 
     .nav-item {
@@ -6,22 +8,22 @@
             text-align: center;
             height: 60px;
             width: 60px;
-            font-weight: $font-weight-normal;
-            color: $dark-gray;
+            font-weight: variables.$font-weight-normal;
+            color: variables.$dark-gray;
             margin-right: 19px;
-            background-color: $opacity-gray-3;
-            border-radius: $btn-round-radius;
+            background-color: variables.$opacity-gray-3;
+            border-radius: variables.$btn-round-radius;
 
             &:hover{
-                background-color: $opacity-gray-3;
+                background-color: variables.$opacity-gray-3;
             }
 
             &.active{
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $dark-gray;
-                    color: $white-color;
+                    background-color: variables.$dark-gray;
+                    color: variables.$white-color;
                     box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
                 }
             }
@@ -43,15 +45,15 @@
     &.nav-pills-neutral{
         .nav-item {
             .nav-link{
-                background-color: $opacity-2;
-                color: $white-color;
+                background-color: variables.$opacity-2;
+                color: variables.$white-color;
 
                 &.active{
                     &,
                     &:focus,
                     &:hover{
-                        background-color: $white-color;
-                        color: $primary-color;
+                        background-color: variables.$white-color;
+                        color: variables.$primary-color;
                     }
                 }
             }
@@ -64,7 +66,7 @@
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $brand-primary;
+                    background-color: variables.$brand-primary;
                 }
             }
         }
@@ -76,7 +78,7 @@
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $brand-info;
+                    background-color: variables.$brand-info;
                 }
             }
         }
@@ -88,7 +90,7 @@
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $brand-success;
+                    background-color: variables.$brand-success;
                 }
             }
         }
@@ -100,7 +102,7 @@
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $brand-warning;
+                    background-color: variables.$brand-warning;
                 }
             }
         }
@@ -112,7 +114,7 @@
                 &,
                 &:focus,
                 &:hover{
-                    background-color: $brand-danger;
+                    background-color: variables.$brand-danger;
                 }
             }
         }

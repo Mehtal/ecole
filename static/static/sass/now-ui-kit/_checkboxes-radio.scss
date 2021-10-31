@@ -1,3 +1,5 @@
+@use "variables";
+
 .checkbox,
 .radio {
   margin-bottom: 12px;
@@ -28,7 +30,7 @@
   border-radius: 3px;
   top: 0;
   background-color: transparent;
-  border: 1px solid $light-gray;
+  border: 1px solid variables.$light-gray;
   -webkit-transition: opacity 0.3s linear;
   -moz-transition: opacity 0.3s linear;
   -o-transition: opacity 0.3s linear;
@@ -43,7 +45,7 @@
   text-align: center;
   font-size: 14px;
   opacity: 0;
-  color: $dark-background;
+  color: variables.$dark-background;
   border: 0;
   background-color: inherit;
 }
@@ -60,7 +62,7 @@
 
 .checkbox input[type="checkbox"]:disabled + label,
 .radio input[type="radio"]:disabled + label  {
-    color: $dark-gray;
+    color: variables.$dark-gray;
     opacity: .5;
 }
 
@@ -133,7 +135,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid $light-gray;
+  border: 1px solid variables.$light-gray;
   display: inline-block;
   position: absolute;
   left: 3px;
@@ -153,8 +155,8 @@
 .radio input[type="radio"]:checked + label::after {
     width: 4px;
     height: 4px;
-    background-color: $dark-background;
-    border-color: $dark-background;
+    background-color: variables.$dark-background;
+    border-color: variables.$dark-background;
     top: 11px;
     left: 11px;
     opacity: 1;
@@ -165,12 +167,12 @@
 }
 
 .radio input[type="radio"]:disabled + label {
-  color: $dark-gray;
+  color: variables.$dark-gray;
 }
 
 .radio input[type="radio"]:disabled + label::before,
 .radio input[type="radio"]:disabled + label::after {
-  color: $dark-gray;
+  color: variables.$dark-gray;
 }
 
 .radio.radio-inline {

@@ -1,5 +1,8 @@
+@use "mixins/popovers";
+@use "variables";
+
 .popover{
-    font-size: $font-size-base;
+    font-size: variables.$font-size-base;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
     border: none;
     line-height: 1.7;
@@ -16,10 +19,10 @@
     }
 
     .popover-header{
-        color: $default-color-opacity;
-        font-size: $font-size-base;
+        color: variables.$default-color-opacity;
+        font-size: variables.$font-size-base;
         text-transform: capitalize;
-        font-weight: $font-weight-semi;
+        font-weight: variables.$font-weight-semi;
         margin: 0;
         margin-top: 5px;
         border: none;
@@ -31,55 +34,55 @@
     }
 
     &.bs-tether-element-attached-top:after{
-        border-bottom-color:$white-color;
+        border-bottom-color:variables.$white-color;
         top: -9px;
     }
 
     &.popover-primary{
-        @include popover-color($primary-color, $white-color);
+        @include popovers.popover-color(variables.$primary-color, variables.$white-color);
     }
 
     &.popover-info{
-        @include popover-color($info-color, $white-color);
+        @include popovers.popover-color(variables.$info-color, variables.$white-color);
     }
 
     &.popover-warning{
-        @include popover-color($warning-color, $white-color);
+        @include popovers.popover-color(variables.$warning-color, variables.$white-color);
     }
 
     &.popover-danger{
-        @include popover-color($danger-color, $white-color);
+        @include popovers.popover-color(variables.$danger-color, variables.$white-color);
     }
 
     &.popover-success{
-        @include popover-color($success-color, $white-color);
+        @include popovers.popover-color(variables.$success-color, variables.$white-color);
     }
 }
 
 
 .tooltip{
     &.bs-tooltip-right .arrow:before{
-        border-right-color:$white-color;
+        border-right-color:variables.$white-color;
     }
 
     &.bs-tooltip-top .arrow:before{
-        border-top-color:$white-color;
+        border-top-color:variables.$white-color;
     }
 
     &.bs-tooltip-bottom .arrow:before{
-        border-bottom-color:$white-color;
+        border-bottom-color:variables.$white-color;
     }
 
     &.bs-tooltip-left .arrow:before{
-        border-left-color:$white-color;
+        border-left-color:variables.$white-color;
     }
 }
 
 .tooltip-inner{
-    padding: $padding-base-vertical $padding-base-horizontal;
+    padding: variables.$padding-base-vertical variables.$padding-base-horizontal;
     min-width: 130px;
-    background-color: $white-color;
-    font-size: $font-size-base;
+    background-color: variables.$white-color;
+    font-size: variables.$font-size-base;
     color: inherit;
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
 }
