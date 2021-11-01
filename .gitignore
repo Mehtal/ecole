@@ -1,4 +1,4 @@
 *.pyc
 *.pyo
-*.sqlite3
 /static/
+bd.sqlite3

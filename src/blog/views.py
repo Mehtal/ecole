@@ -139,3 +139,15 @@ def image_delete(request, pk):
         messages.error(request, "you are not allowed to delet this item")
         return redirect("blog:detail", owner.id)
     return redirect('home')
+
+
+def post_delete(request, pk):
+    post = Post.objects.get(id=pk)
+    owner = post.user
+    if request.user.is_superuser or request.user == owner:
+        post.delete()
+        messages.success(request, 'your post  was sucessfully deleted')
+        return redirect("home")
+    else:
+        messages.error(request, "you are not allowed to delet this item")
+        return redirect("home")

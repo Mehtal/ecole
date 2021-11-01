@@ -1,7 +1,11 @@
 {% load static %}
 
 	
-
+	{% if messages%}
+	{% for msg in messages %}
+	<div class="alert bg-success text-white text-center">{{ msg  }} </div>
+	{% endfor %}
+	{% endif %}
 {% if  request.user.is_superuser %}
 <div class="fixed-bottom">
 	<a href="{% url 'blog:create' %}" class="coffee-button text-white p-4  circle"><i class="fas fa-plus"></i></a>
@@ -31,7 +35,7 @@
 {% if posts.title %}
 <div class="card d-flex flex-column p-3">
 	{% if  request.user.is_superuser or request.user == posts.user %}
-	<span class="close-btn"><i class="fas fa-times fa-2x"></i></span>
+	<a href="{% url 'blog:post-delete' posts.id %}""><span  class="close-btn"><i class="fas fa-times fa-2x"></i></span></a>
 	{% endif %}
 	<div class=" d-flex">
 		<img  class="rounded-circle pi mr-2" src="{{posts.user.avatar.url }}">
@@ -41,7 +45,7 @@
 				<span class="timestamp"><a href=" {{ posts.get_absolute_url }} ">{% if posts.updated %}{{ posts.updated|timesince }}{% else %}{{ timestamp|timesince }}{% endif %} ago</a></span>
 			</div>
 			<div class="card-block">
-				<p style="word-break: break-word;" class="card-text text-muted">{{ posts.content|truncatechars:300 }}</p><hr/>
+				<p style="word-break: break-word;" class="card-text text-muted">{{ posts.content|safe|truncatechars:300 }}</p><hr/>
 			</div>
 			<a href="{% url 'blog:detail' posts.id %}"><img class="card-post-image" src="{{ posts.images.first.image.url }}" alt="Card image cap"></a>
 			<div class="card-block">
