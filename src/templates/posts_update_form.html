@@ -32,12 +32,11 @@
   text-align: center;
 }
 </style>
-<div class="page-header" filter-color="orange">
-    <div class="page-header-image" style="background-image:url({% static 'img/a4.jpg' %})"></div>
+
     <div class="nav-spacing"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto bg-default my-3 p-5">
+            <div class="col-md-10 mx-auto bg-white my-3 p-5">
 
             <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
                 {{ form.media }}
@@ -53,7 +52,7 @@
                 <input class="d-block" type="submit" value="Update" />
             </form>
             </div>
-<div class="col-md-8 mx-auto bg-default my-3 p-5">
+<div class="col-md-10 mx-auto bg-white my-3 p-5">
       <strong >attachment</strong>
       <div class="row mt-5">
       {% for obj in post.images.all %}
@@ -77,5 +76,5 @@
       </div>
         </div>
     </div>
-</div></div>
+</div>
       {% endblock content %}

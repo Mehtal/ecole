@@ -1,6 +1,6 @@
 {% load static %}
  <!-- Navbar -->
-  <nav class="navbar fixed-top container d-block" color-on-scroll="400">
+  <nav class="navbar bg-white container d-block">
 
 <div class="container navbar-translate d-flex justify-content-between">
 
@@ -15,7 +15,7 @@
 	                   <!--  <li class="nav-item">
 	                        <a class="nav-link" href="{% url 'student_signup' %}"><strong>Create Account</strong> </a>
 	                    </li> -->
-	                    <li class="nav-item">
+	                    <li class="nav-item bg-dark">
 	                    	 <form style="display:inherit;" id="navSearch" action="{% url 'home' %}" method="GET">
 
 			<input class="form-control form-control-no-border" type="text" name="q" placeholder='Search...' value="{{ request.GET.q }}">

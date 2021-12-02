@@ -152,3 +152,6 @@ LOGIN_REDIRECT_URL = '/'
 #        'toolbar': 'Basic',
 #    },
 #}
+
+
+X_FRAME_OPTIONS = "allowall"

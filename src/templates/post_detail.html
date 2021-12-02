@@ -35,8 +35,7 @@
   text-align: center;
 }
 </style>
-<div class="page-header" filter-color="orange">
-  <div class="page-header-image" style="background-image:url({% static 'img/a3.jpg' %})"></div>
+
 <div class="nav-spacing">
 	{% if messages%}
 	{% for msg in messages %}
@@ -52,7 +51,7 @@
 	</div>
 	{% endif %}
 	<div class="row">
-		<div class="col-md-8 mx-auto bg-default my-3 p-5">
+		<div class="col-md-10 mx-auto bg-white my-3 p-5">
 			<article>
 			<h2 class="text-center">{{ post.title }}</h2><hr/>
 			<p style="word-break: break-word;">{{ post.content|safe }}</p><hr/>
@@ -60,7 +59,7 @@
 		<a class="btn btn-info" href="{% url 'home' %}">retour</a>
 		</div>
 		{% if image_list %}
-		<div class="col-md-8 mx-auto bg-default my-3 p-5">
+		<div class="col-md-10 mx-auto bg-white my-3 p-5">
 			<strong >image attachment click to download</strong>
 			<div class="row my-5">
 			{% for obj in image_list %}
@@ -78,7 +77,7 @@
 			</div></div>
 			 {% endif %}
 			{% if file_list %}
-			<div class="col-md-8 mx-auto bg-default my-3 p-5">
+			<div class="col-md-10 mx-auto bg-white my-3 p-5">
 			<strong >file attachment click to download</strong>
 
 			<div class="row my-5">
@@ -112,5 +111,5 @@
 
 
 
-</div></div>
+</div>
 {% endblock %}
