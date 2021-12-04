@@ -1,34 +1,36 @@
 {% load static %}
  <!-- Navbar -->
-  <nav class="navbar bg-white container d-block">
+  <nav class="navbar bg-white fixed-top container d-block">
 
-<div class="container navbar-translate d-flex justify-content-between">
+<div class="container  navbar-translate">
 
-		<a class="" style="width: clamp(180px,50%,300px);">
-		   <img src="{% static 'img/logo.png' %}" width="clamp(180px,50%,250px)"alt="logo">
+		<a href="{% url 'home' %}" style="width:clamp(180px,50%,250px);">
+		   <img src="{% static 'img/logo.png' %}" alt="logo">
 		 </a>
 		 <button class="navbar-toggler navbar-toggler last" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
 		     <i class="fas fa-th"></i>
 		 </button>
-		 <div class="collapse navbar-collapse justify-content-end py-3" id="navigation">
-	                <ul class="navbar-nav justify-content-end">
-	                   <!--  <li class="nav-item">
-	                        <a class="nav-link" href="{% url 'student_signup' %}"><strong>Create Account</strong> </a>
-	                    </li> -->
-	                    <li class="nav-item bg-dark">
-	                    	 <form style="display:inherit;" id="navSearch" action="{% url 'home' %}" method="GET">
+		 	 
+		 <div  class="collapse navbar-collapse py-3" id="navigation">
+            <ul class="navbar-nav flex-column ">
+            	 <li class="nav-item" >
+                	 <form class="bg-default-light"  action="{% url 'home' %}" method="GET">
 
-			<input class="form-control form-control-no-border" type="text" name="q" placeholder='Search...' value="{{ request.GET.q }}">
-			<button style="display:none" class="btn btn-primary btn-simple" type='submit' value='search'>Search</button>
+						<input class="form-control form-control-no-border" type="text" name="q" placeholder='بحث...' value="{{ request.GET.q }}">
+						<button style="display:none" class="btn btn-primary btn-simple" type='submit' value='search'>Search</button>
 
-		</form>
-	                    </li>
-	                    {% if not user.is_authenticated %}<li class="nav-item">
-	                        <a style="color: black !important;" class="nav-link" href="{% url 'login' %}"><strong>Login</strong></a>
-	                    </li>{% endif %}
+					</form>
+                </li>
+                {% if not user.is_authenticated %}<li class="nav-item">
+                    <a  class="nav-link" href="{% url 'login' %}"><strong>تسجيل الدخول</strong></a>
+                </li>{% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'grade:list' %}"><strong>مواضيع الإختبارات</strong> </a>
+                </li>
 
-	                </ul>
-	            </div>
+
+            </ul>
+        </div>
 
 </div>
 </nav>

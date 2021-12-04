@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'api/blog/', include('blog.api.urls', namespace='api_blog')),
     url(r'blog/', include('blog.urls', namespace='blog')),
     url(r'marks/', include('marks.urls', namespace='marks')),
+    url(r'grades/', include('grades.urls', namespace='grade')),
     url(r'events/', include('events.urls', namespace='events')),
     url(r'^$',  accounts_views.HomeListView.as_view(), name='home'),
     #url(r'ckeditor/', include('ckeditor_uploader.urls', )),

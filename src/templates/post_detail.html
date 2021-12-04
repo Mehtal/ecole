@@ -1,6 +1,6 @@
 {% extends 'accounts/base.html' %}
 {% load static %}
-{% block title %}{{ post.title }}{% endblock title %}
+{% block title %}{{ grade.name }}{% endblock title %}
 {% block content%}
 <style >
 	.images:hover {
@@ -37,6 +37,7 @@
 </style>
 
 <div class="nav-spacing">
+	<h3>{{ grade.name }}</h3>
 	{% if messages%}
 	{% for msg in messages %}
 	<div class="alert bg-success text-white text-center">{{ msg  }} </div>

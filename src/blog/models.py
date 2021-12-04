@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import User
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from grades.models import Grade
 import os
 # Create your models here.
 
@@ -9,7 +10,8 @@ import os
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
     title = models.CharField(max_length=120)
-    content = RichTextField(config_name='awesome_ckeditor',blank=True,null=True,max_length=2000)
+    content = RichTextField(config_name='awesome_ckeditor', blank=True, null=True, max_length=2000)
+    grade = models.ForeignKey(Grade, on_delete=models.CASCADE, related_name="posts", blank=True, null=True)
     like = models.ManyToManyField(User, related_name="likes", blank=True,)
     draft = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)

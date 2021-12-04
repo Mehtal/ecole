@@ -1,0 +1,86 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock title %}
+{% block content%}
+<style >
+	.images:hover {
+		background: rgba(0,0,0,0.5);
+	}
+	.images {
+		max-height: 100px;
+	}
+	.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(44,168,255,0.5);
+}
+.overlay:hover {
+	opacity: 1;
+}
+.text {
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+
+<div class="nav-spacing">
+
+	{% if messages%}
+	{% for msg in messages %}
+	<div class="alert bg-success text-white text-center">{{ msg  }} </div>
+	{% endfor %}
+	{% endif %}
+</div>
+
+<div class="container">
+	<div class="row">
+		<h5>{{ grade.name }}</h5>
+	</div>
+	<div class="row">
+		<div class="col-md-10">
+
+	{% for post in grade.posts.all %}
+	
+		<p> <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a> </p>
+		<div class="d-none d-sm-block">
+		<p>{{ post.content }}</p>
+	
+		<img src="{{ post.image.url }}">
+		{% if post.updated %}
+		<p>Updated : {{ post.updated|timesince }} ago</p><hr/><hr/>
+		{% else %}
+		<p>Created{{ post.timestamp|timesince }} ago </p>
+		{% endif %}
+		
+		<p>author : {{ post.user.get_full_name }}</p></div>
+		{% if  post.user == request.user%}
+			<button class="btn btn-info"><a href="{% url 'blog:update' post.id %}">Update</a></button>
+
+		{% endif%}
+	{% empty %}
+			{% if request.GET.q %}
+			<p>no post found</p>
+			{% else %}
+			<p> no posts yet</p>
+			{% endif %}
+
+	{% endfor %}
+		</div>
+	</div>
+
+
+</div>
+{% endblock %}

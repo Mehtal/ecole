@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bxskw5hrbndg5fsd5v*r1x04eog%z@zaz^eun-div!mrw7@5#$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["pegas.pythonanywhere.com", "127.0.0.1", ]
+ALLOWED_HOSTS = ["pegas.pythonanywhere.com", "127.0.0.1", "*"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'events',
     'blog',
     'marks',
+    'grades',
     'rest_framework',
     'ckeditor',
     #    'ckeditor_uploader'
